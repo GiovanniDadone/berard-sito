@@ -1,0 +1,20 @@
+/* Layout.css */
+:root {
+  --primary-red: #fe0b0b;
+  --primary-teal: #22bfac;
+  --primary-purple: #8447ff;
+  --primary-dark: #181114;
+  --primary-light: #fdfffc;
+}
+
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+.layout-main {
+  flex-grow: 1;
+}
