@@ -3,65 +3,62 @@ import "./StorySection.css";
 
 const StorySection = () => {
   return (
-    <article className="story-card">
-      <div className="prose">
-        {/* Lead paragraph */}
-        <div className="lead-paragraph">
-          <div className="lead-decoration"></div>
-          <p className="lead-text">
-            Il desiderio di migliorare la società che mi circonda non mi ha mai
-            abbandonata, sin da quando era una bambina.
-          </p>
-        </div>
+    <div className="story-container">
+      <div className="story-content">
+        {/* Sezione Titolo */}
+        <section className="story-header">
+          <h1 className="story-title">
+            <span className="name">Chiara</span>
+            <span className="surname">BERARD</span>
+          </h1>
+          <h2 className="story-subtitle">
+            <span className="region">VALLE D'AOSTA</span>
+            <span className="list">AYERTA</span>
+          </h2>
+        </section>
 
-        {/* Content paragraphs */}
-        <div className="content-text">
-          <p>
-            Andarsene o restare in Valle? La verità è che, in fondo, ho fatto
-            entrambe le cose: con tanta fatica ma anche con grande
-            soddisfazione, continuo da anni a impegnarmi nell'attivismo e nella
-            politica valdostana, anche mentre studio e lavoro fuori.
-          </p>
-
-          <p>
-            Ho continuato a seguire da vicino ciò che accade sul territorio,
-            contribuendo attivamente alla vita di diverse realtà associative e
-            collettive: dalla vicepresidenza di{" "}
-            <span className="highlight-red">Arcigay Queer VdA</span>{" "}
-            all'organizzazione del primo{" "}
-            <span className="highlight-teal">Pride della Valle d'Aosta</span>,
-            fino all'impegno in BDS VdA, nella Pro Loco di Rhêmes e in molte
-            altre esperienze di partecipazione concreta.
-          </p>
-
-          <p>
-            Ed è grazie anche a queste esperienze che mi sono accorta che ora
-            più che mai, serve un{" "}
-            <span className="highlight-bold">cambiamento radicale</span>: nella
-            sanità, nel lavoro, nella tutela dell'ambiente e per i diritti di
-            tuttə.
-          </p>
-
-          <p>
-            Non possiamo più accettare liste d'attesa infinite, stipendi tra i
-            più bassi d'Italia, giovani costrettə ad andarsene, mentre i nostri
-            diritti vengono costantemente calpestati.{" "}
-            <span className="highlight-semibold">
-              Chi vive in Valle d'Aosta merita di più.
-            </span>
-          </p>
-
-          <div className="highlight-card">
-            <p className="highlight-text">
-              Per questo mi candido con{" "}
-              <span className="highlight-purple-bold">@vdaaperta</span>: una
-              squadra pazzesca che collabora da 3 anni per costruire insieme
-              tutta un'altra Valle. ❤️💚
+        {/* Sezione Contenuto */}
+        <section className="story-main">
+          <div className="story-column">
+            <h3 className="section-heading">La mia storia</h3>
+            <p className="story-text">
+              Nata e cresciuta in Valle d'Aosta, combatto da anni per <span className="highlight-red">giustizia sociale</span> e <span className="highlight-teal">ambientale</span>. La mia battaglia contro il <span className="highlight-bold">pirogassificatore</span> è solo una delle tante.
             </p>
           </div>
-        </div>
+
+          <div className="story-column">
+            <h3 className="section-heading">I miei valori</h3>
+            <ul className="value-list">
+              <li className="value-item">
+                <span className="value-icon">✊</span>
+                <span>Diritti LGBTQIA+</span>
+              </li>
+              <li className="value-item">
+                <span className="value-icon">🏥</span>
+                <span>Sanità accessibile</span>
+              </li>
+              <li className="value-item">
+                <span className="value-icon">💼</span>
+                <span>Lavoro dignitoso</span>
+              </li>
+              <li className="value-item">
+                <span className="value-icon">🌿</span>
+                <span>Tutela ambientale</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        {/* Sezione Citazione */}
+        <section className="story-quote">
+          <div className="quote-box">
+            <p className="quote-text">
+              "Mi candido per portare in Consiglio la voce di chi non ha mai avuto spazio. <span className="highlight-purple">Insieme possiamo cambiare la Valle d'Aosta</span>."
+            </p>
+          </div>
+        </section>
       </div>
-    </article>
+    </div>
   );
 };
 

@@ -10,9 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/press-start-2p": "^5.2.6",
     "gsap": "^3.13.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-fast-marquee": "^1.6.5",
     "react-router-dom": "^7.7.1",
     "styled-components": "^6.1.19"
   },

@@ -1,18 +1,15 @@
-import React from 'react';
-import HeroSection from '../components/HeroSection';
-import StorySection from '../components/StorySection';
-import EngagementSection from '../components/EngagementSection';
-import InfiniteScrollBanner from '../components/InfiniteScrollBanner';
-import './ChiSono.css';
+import EngagementSection from "../components/EngagementSection";
+import FastNewsBanner from "../components/FastNewsBanner";
+import HeroSection from "../components/HeroSection";
+import StorySection from "../components/StorySection";
+import "./ChiSono.css";
 
 const ChiSono = () => {
   return (
     <main className="main-container">
       {/* Hero Section */}
       <HeroSection />
-      <InfiniteScrollBanner
-        text="Sognare, lottare, restare"
-      />
+      <FastNewsBanner />
 
       {/* Content Section */}
       <section className="content-section">

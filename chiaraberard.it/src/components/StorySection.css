@@ -1,193 +1,181 @@
-.story-card {
-  background: var(--primary-red);
-  color: var(--primary-light);
-  border-radius: 1.5rem;
-  padding: 2.5rem;
-  margin-bottom: 4rem;
-  box-shadow: var(--shadow-lg);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+/* StorySection.css */
+:root {
+  --primary-red: #fe0b0b;
+  --primary-teal: #22bfac;
+  --primary-purple: #8447ff;
+  --primary-dark: #181114;
+  --primary-light: #fdfffc;
 }
 
-.story-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 200px;
-  height: 200px;
+.story-container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem 0;
+  background: linear-gradient(
+      color-mix(in srgb, var(--primary-purple) 85%, transparent),
+      color-mix(in srgb, var(--primary-dark) 95%, transparent)
+    ),
+    url("/Santino_sovraimpressione.png") left center/cover no-repeat;
+  color: var(--primary-light);
+  display: flex;
+  font-family: "Arial", sans-serif;
+  backdrop-filter: blur(
+    2px
+  ); /* Aggiunge un effetto di sfocatura per migliorare la leggibilità */
+}
+
+.story-content {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Header */
+.story-header {
+  margin-bottom: 3rem;
+}
+
+.story-title {
+  font-size: 4rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.name {
+  display: block;
+  font-weight: 300;
+  color: var(--primary-light);
+}
+
+.surname {
+  display: block;
+  font-weight: 700;
+  color: var(--primary-red);
+  letter-spacing: 0.1em;
+}
+
+.story-subtitle {
+  font-size: 1.8rem;
+}
+
+.region {
+  display: block;
+  color: var(--primary-light);
+  font-weight: 400;
+}
+
+.list {
+  display: block;
+  color: var(--primary-teal);
+  font-weight: 600;
+}
+
+/* Main Content */
+.story-main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+.story-column {
   background: rgba(253, 255, 252, 0.1);
-  border-radius: 50%;
-  transform: translate(50%, -50%);
+  backdrop-filter: blur(5px);
+  border-radius: 8px;
+  padding: 2rem;
+  border: 1px solid rgba(253, 255, 252, 0.2);
 }
 
-.story-card:hover {
-  box-shadow: 0 20px 40px rgba(254, 11, 11, 0.3);
-  transform: translateY(-8px);
-}
-
-.prose {
-  max-width: none;
+.section-heading {
+  font-size: 1.8rem;
   color: var(--primary-light);
-  font-size: 1.125rem;
-  line-height: 1.75;
-  position: relative;
-  z-index: 2;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary-purple);
 }
 
-.prose p {
-  margin-bottom: 1.75rem;
+.story-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
 }
 
-.lead-paragraph {
-  position: relative;
-  padding-left: 2rem;
-  margin-bottom: 2.5rem;
-}
-
-.lead-decoration {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 0.5rem;
-  height: 100%;
-  background-color: var(--primary-light);
-  border-radius: 0.25rem;
-}
-
-.lead-text {
-  font-size: 1.5rem;
-  font-weight: 600;
-  line-height: 1.6;
-  color: var(--primary-light);
-}
-
+/* Highlight */
 .highlight-red {
-  color: var(--primary-dark);
+  color: var(--primary-red);
   font-weight: 600;
-  padding: 0.2rem 0.5rem;
-  background-color: var(--primary-light);
-  border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .highlight-teal {
-  color: var(--primary-dark);
+  color: var(--primary-teal);
   font-weight: 600;
-  padding: 0.2rem 0.5rem;
-  background-color: var(--primary-teal);
-  border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .highlight-bold {
-  color: var(--primary-dark);
   font-weight: 700;
   background-color: var(--primary-light);
-  padding: 0.2rem 0.5rem;
-  border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.highlight-semibold {
-  color: var(--primary-light);
-  font-weight: 600;
-  text-shadow: 1px 1px 2px rgba(24, 17, 20, 0.3);
-}
-
-.highlight-purple-bold {
-  color: var(--primary-light);
-  font-weight: 700;
-  padding: 0.2rem 0.5rem;
-  background-color: var(--primary-purple);
-  border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Highlight Card */
-.highlight-card {
-  position: relative;
-  background: var(--primary-teal);
   color: var(--primary-dark);
-  padding: 2.5rem;
-  border-radius: 1rem;
-  margin: 3rem 0;
-  box-shadow: var(--shadow-lg);
-  transition: all 0.3s ease;
-  overflow: hidden;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
 }
 
-.highlight-card::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 150px;
-  height: 150px;
-  background: rgba(24, 17, 20, 0.1);
-  border-radius: 50%;
-  transform: translate(-30%, 30%);
+.highlight-purple {
+  color: var(--primary-purple);
+  font-weight: 600;
 }
 
-.highlight-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(34, 191, 172, 0.3);
+/* Value List */
+.value-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.value-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+}
+
+.value-icon {
+  font-size: 1.5rem;
+  color: var(--primary-teal);
+}
+
+/* Quote */
+.quote-box {
   background: var(--primary-purple);
-  color: var(--primary-light);
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 800px;
+  text-align: center;
+  margin-left: 0;
 }
 
-.highlight-text {
-  position: relative;
-  font-size: 1.25rem;
-  font-weight: 600;
+.quote-text {
+  font-size: 1.3rem;
   line-height: 1.6;
-  z-index: 1;
+  font-style: italic;
 }
 
-/* Content Text Styling */
-.content-text {
-  position: relative;
-  z-index: 2;
-}
-
-.content-text p {
-  margin-bottom: 2rem;
-  font-size: 1.125rem;
-  line-height: 1.8;
-  text-align: justify;
-  position: relative;
-}
-
-.content-text p:first-child {
-  font-size: 1.2rem;
-  font-weight: 500;
-}
-
-.content-text p:last-of-type {
-  margin-bottom: 2.5rem;
-  font-weight: 500;
-  font-size: 1.15rem;
-}
-
-.content-text p::first-letter {
-  font-size: 1.3em;
-  font-weight: 600;
-  color: var(--primary-light);
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-/* Responsive Content Text */
+/* Responsive */
 @media (max-width: 768px) {
-  .content-text p {
-    font-size: 1rem;
-    line-height: 1.7;
-    text-align: left;
-    margin-bottom: 1.5rem;
+  .story-title {
+    font-size: 3rem;
   }
 
-  .content-text p:first-child,
-  .content-text p:last-of-type {
-    font-size: 1.05rem;
+  .story-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .story-main {
+    grid-template-columns: 1fr;
+  }
+
+  .quote-box {
+    padding: 1.5rem;
   }
 }
