@@ -1,0 +1,107 @@
+/* Header.css */
+:root {
+  --primary-red: #fe0b0b;
+  --primary-teal: #22bfac;
+  --primary-purple: #8447ff;
+  --primary-dark: #181114;
+  --primary-light: #fdfffc;
+  --transition: all 0.3s ease;
+}
+
+@font-face {
+  font-family: "Mattone";
+  src: url("./fonts/Mattone-Regular.woff2") format("woff2"),
+    url("./fonts/Mattone-Regular.woff") format("woff"), sans-serif;
+  font-display: swap;
+}
+
+.header {
+  width: 100%;
+  background: rgba(34, 191, 172, 0.85);
+  backdrop-filter: blur(20px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.logo-image {
+  height: 90%;
+  width: auto;
+  max-width: 200px;
+  object-fit: contain;
+  transition: var(--transition);
+}
+
+.logo-image:hover {
+  scale: 1.2;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-link {
+  color: var(--primary-light);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  margin-top: 15px;
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.nav-link:hover {
+  color: var(--primary-dark);
+  background: var(--primary-light);
+}
+
+.button-link {
+  font-family: "Mattone", sans-serif;
+  padding: 10px 18px;
+  color: var(--primary-light);
+  background-color: var(--primary-purple);
+  border-style: hidden;
+  border-radius: 10%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 80px;
+}
+
+.button-link:hover {
+  color: var(--primary-purple);
+  background-color: var(--primary-light);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+    height: 60px;
+  }
+
+  .logo-image {
+    height: 40px;
+    max-width: 160px;
+  }
+}

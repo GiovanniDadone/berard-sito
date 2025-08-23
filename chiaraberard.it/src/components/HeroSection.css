@@ -50,16 +50,20 @@
   margin-bottom: 1.5rem;
 }
 
+.hero-call h5 {
+  font-size: x-large;
+}
+
 @media (max-width: 1024px) {
   .hero-container {
     flex-direction: column;
     gap: 2rem;
   }
-  
+
   .hero-image {
     max-width: 400px;
   }
-  
+
   .hero-text-container {
     text-align: center;
   }
@@ -69,7 +73,7 @@
   .hero-title {
     font-size: 2rem;
   }
-  
+
   .hero-description {
     font-size: 1rem;
   }
@@ -78,10 +82,10 @@
 @media (max-width: 480px) {
   .hero-container {
     padding: 0 1.5rem;
-  gap: 1.5rem;
-  padding: 2rem 1rem;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
   }
-  
+
   .hero-title {
     font-size: 1.8rem;
   }

@@ -1,4 +1,4 @@
-/* StorySection.css */
+/* Proposte.css */
 :root {
   --primary-red: #fe0b0b;
   --primary-teal: #22bfac;
@@ -8,26 +8,24 @@
 }
 
 @font-face {
-  font-family: 'Mattone';
-  src: url('./fonts/Mattone-Regular.woff2') format('woff2'),
-       url('./fonts/Mattone-Regular.woff') format('woff'),
-       sans-serif;
+  font-family: "Mattone";
+  src: url("./fonts/Mattone-Regular.woff2") format("woff2"),
+    url("./fonts/Mattone-Regular.woff") format("woff"), sans-serif;
   font-display: swap;
 }
 
-.story-container {
-  min-height: 100vh;
+.proposte-container {
+  height: fit-content;
   padding: 2rem;
   background: linear-gradient(
     color-mix(in srgb, var(--primary-purple) 85%, transparent),
-    color-mix(in srgb, var(--primary-dark) 95%, transparent)
-  ),
-  url("/Santino_sovraimpressione.png") left center/cover no-repeat;
+    color-mix(in srgb, var(--primary-teal) 95%, transparent)
+  );
   color: var(--primary-light);
-  font-family: 'Mattone', sans-serif;
+  font-family: "Mattone", sans-serif;
 }
 
-.story-content {
+.proposte-content {
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -36,6 +34,7 @@ h1 {
   font-size: 4rem;
   line-height: 1;
   margin-bottom: 0.5rem;
+  text-align: center;
 }
 
 h2 {
@@ -43,31 +42,31 @@ h2 {
   margin-bottom: 3rem;
   color: var(--primary-teal);
   font-weight: 600;
+  text-align: center;
 }
 
 h3 {
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--primary-purple);
+  border-bottom: 2px solid var(--primary-dark);
 }
 
-.story-main {
+.proposte-main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
   margin-bottom: 3rem;
 }
 
-.story-column {
+.proposta-card {
   background: rgba(253, 255, 252, 0.1);
-  backdrop-filter: blur(5px);
   padding: 2rem;
   border-radius: 8px;
   border: 1px solid rgba(253, 255, 252, 0.2);
 }
 
-.story-text {
+.proposta-text {
   font-size: 1.1rem;
   line-height: 1.7;
 }
@@ -82,36 +81,9 @@ h3 {
   font-weight: 600;
 }
 
-.highlight-bold {
-  font-weight: 700;
-  background: var(--primary-light);
-  color: var(--primary-dark);
-  padding: 0.2rem 0.4rem;
-  border-radius: 4px;
-}
-
 .highlight-purple {
   color: var(--primary-purple);
   font-weight: 600;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-li {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.2rem;
-  font-size: 1.1rem;
-}
-
-.value-icon {
-  font-size: 1.5rem;
-  color: var(--primary-teal);
 }
 
 .quote-box {
@@ -125,8 +97,16 @@ li {
 }
 
 @media (max-width: 768px) {
-  h1 { font-size: 3rem; }
-  h2 { font-size: 1.5rem; }
-  .story-main { grid-template-columns: 1fr; }
-  .quote-box { padding: 1.5rem; }
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  .proposte-main {
+    grid-template-columns: 1fr;
+  }
+  .quote-box {
+    padding: 1.5rem;
+  }
 }

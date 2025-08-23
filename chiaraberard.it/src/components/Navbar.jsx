@@ -1,14 +1,14 @@
-// Header.jsx
+// Navbar.jsx
 import React from 'react';
-import './Header.css';
+import './Navbar.css';
 
-const Header = () => {
+const Navbar = () => {
   return (
     <header className="header bg-teal-85 sticky-top">
       <div className="container flex-between py-2">
         <a href="/" className="logo-link">
           <img 
-            src="/icona_sito.png" 
+            src="/Santino_sovraimpressione.png" 
             alt="Chiara Berard - Elezioni Regionali Valle d'Aosta" 
             className="logo-image"
           />
@@ -17,8 +17,9 @@ const Header = () => {
         <nav className="nav">
           <ul className="nav-list flex-center gap-4">
             <li><a href="/chi-sono" className="nav-link">Chi sono</a></li>
-            <li><a href="/cosa-faccio" className="nav-link">Cosa faccio</a></li>
+            <li><a href="/proposte" className="nav-link">Le mie proposte</a></li>
             <li><a href="/contatti" className="nav-link">Contatti</a></li>
+            <button className="button-link">Scrivimi</button>
           </ul>
         </nav>
       </div>
@@ -26,4 +27,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Navbar;
