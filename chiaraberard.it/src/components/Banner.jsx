@@ -13,14 +13,12 @@ const Banner = () => {
         className="marquee-container"
       >
         <span className="banner-text">Sognare. Lottare. Restare.</span>
-        <span>............</span>
-        <span className="banner-text">Vota Berard!</span>
-        <span>............</span>
+        <span>.........</span>
+        <span className="banner-text">Vota Valle d’Aosta Aperta, scrivi Berard!</span>
+        <span>.........</span>
         <span className="banner-text">
           Per una Valle d'Aosta che non lascia indietro nessunə.
-        </span>
-        <span>............</span>
-        <span className="banner-text">Vota Berard!</span>
+        </span>{" "}
       </Marquee>
     </div>
   );

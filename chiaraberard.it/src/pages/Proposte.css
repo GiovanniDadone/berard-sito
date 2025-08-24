@@ -9,8 +9,15 @@
 
 @font-face {
   font-family: "Mattone";
-  src: url("./fonts/Mattone-Regular.woff2") format("woff2"),
-    url("./fonts/Mattone-Regular.woff") format("woff"), sans-serif;
+  src: url("/fonts/Mattone-Regular.woff2") format("woff2"),
+    url("/fonts/Mattone-Regular.woff") format("woff"), sans-serif;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Apfel";
+  src: url("/fonts/ApfelGrotezk-Regular.woff2") format("woff2"),
+    url("/fonts/ApfelGrotezk-Regular.woff") format("woff"), sans-serif;
   font-display: swap;
 }
 
@@ -22,7 +29,7 @@
     color-mix(in srgb, var(--primary-teal) 95%, transparent)
   );
   color: var(--primary-light);
-  font-family: "Mattone", sans-serif;
+  font-family: "Apfel", sans-serif; /* Cambiato da Mattone ad Apfel per il contenuto base */
 }
 
 .proposte-content {
@@ -30,7 +37,9 @@
   margin: 0 auto;
 }
 
+/* TITOLI: Solo Mattone */
 h1 {
+  font-family: "Mattone", sans-serif; /* Mattone per i titoli */
   font-size: 4rem;
   line-height: 1;
   margin-bottom: 0.5rem;
@@ -38,6 +47,7 @@ h1 {
 }
 
 h2 {
+  font-family: "Mattone", sans-serif; /* Mattone per i titoli */
   font-size: 1.8rem;
   margin-bottom: 3rem;
   color: var(--primary-teal);
@@ -46,12 +56,14 @@ h2 {
 }
 
 h3 {
+  font-family: "Mattone", sans-serif; /* Cambiato da Apfel a Mattone per coerenza titoli */
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--primary-dark);
 }
 
+/* CONTENUTO: Apfel per tutto il resto */
 .proposte-main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -67,23 +79,9 @@ h3 {
 }
 
 .proposta-text {
+  font-family: "Apfel", sans-serif; /* Apfel per il testo del contenuto */
   font-size: 1.1rem;
   line-height: 1.7;
-}
-
-.highlight-red {
-  color: var(--primary-red);
-  font-weight: 600;
-}
-
-.highlight-teal {
-  color: var(--primary-teal);
-  font-weight: 600;
-}
-
-.highlight-purple {
-  color: var(--primary-purple);
-  font-weight: 600;
 }
 
 .quote-box {
@@ -94,18 +92,22 @@ h3 {
   font-size: 1.3rem;
   line-height: 1.6;
   font-style: italic;
+  font-family: "Apfel", sans-serif; /* Apfel per il contenuto */
 }
 
 @media (max-width: 768px) {
   h1 {
     font-size: 3rem;
   }
+
   h2 {
     font-size: 1.5rem;
   }
+
   .proposte-main {
     grid-template-columns: 1fr;
   }
+
   .quote-box {
     padding: 1.5rem;
   }

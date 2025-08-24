@@ -1,4 +1,4 @@
-/* Header.css */
+/* Navbar.css */
 :root {
   --primary-red: #fe0b0b;
   --primary-teal: #22bfac;
@@ -9,9 +9,9 @@
 }
 
 @font-face {
-  font-family: "Mattone";
-  src: url("./fonts/Mattone-Regular.woff2") format("woff2"),
-    url("./fonts/Mattone-Regular.woff") format("woff"), sans-serif;
+  font-family: "Apfel";
+  src: url("/fonts/ApfelGrotezk-Regular.woff2") format("woff2"),
+    url("/fonts/ApfelGrotezk-Regular.woff") format("woff"), sans-serif;
   font-display: swap;
 }
 
@@ -52,6 +52,11 @@
   scale: 1.2;
 }
 
+/* Desktop Navigation */
+.desktop-nav {
+  display: block;
+}
+
 .nav-list {
   list-style: none;
   margin: 0;
@@ -66,8 +71,8 @@
   text-decoration: none;
   font-weight: 500;
   padding: 0.5rem 1rem;
-  margin-top: 15px;
   border-radius: 4px;
+  margin-top: 20px;
   transition: var(--transition);
 }
 
@@ -77,21 +82,122 @@
 }
 
 .button-link {
-  font-family: "Mattone", sans-serif;
+  font-family: "Apfel", sans-serif; /* Cambiato da Mattone a Inter */
+  font-size: medium;
+  font-weight: 600; /* Aggiunto peso per più consistenza */
   padding: 10px 18px;
   color: var(--primary-light);
   background-color: var(--primary-purple);
   border-style: hidden;
-  border-radius: 10%;
+  border-radius: 8px; /* Cambiato da 10% a 8px per forma più consistente */
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-left: 80px;
+  margin-left: 20px;
 }
 
 .button-link:hover {
   color: var(--primary-purple);
   background-color: var(--primary-light);
+}
+
+/* Mobile Hamburger - CORRETTO */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
   cursor: pointer;
+  padding: 8px; /* Aumentato il padding */
+  gap: 5px; /* Aumentato il gap */
+  width: 32px;
+  height: 32px;
+  justify-content: center;
+  align-items: center;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 2px; /* Ridotto da 3px a 2px */
+  background: var(--primary-light);
+  transition: var(--transition);
+  border-radius: 1px;
+  transform-origin: center; /* Aggiunto per migliore rotazione */
+}
+
+/* Animazione hamburger corretta */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 4px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-10px); /* Aggiunto per animazione più fluida */
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: var(--primary-teal);
+  backdrop-filter: blur(20px);
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.mobile-nav.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: all;
+}
+
+.mobile-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-nav-link {
+  color: var(--primary-light);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid rgba(253, 255, 252, 0.1);
+  transition: var(--transition);
+  display: block;
+}
+
+.mobile-nav-link:hover {
+  background: rgba(253, 255, 252, 0.1);
+}
+
+.mobile-button-link {
+  font-family: "Apfel", sans-serif; /* Cambiato da Mattone a Inter */
+  font-size: medium;
+  font-weight: 600; /* Aggiunto peso */
+  padding: 1rem 2rem;
+  color: var(--primary-light);
+  background-color: var(--primary-purple);
+  border: none;
+  border-radius: 9%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.mobile-button-link:hover {
+  background-color: var(--primary-light);
+  color: var(--primary-purple);
 }
 
 @media (max-width: 768px) {
@@ -103,5 +209,23 @@
   .logo-image {
     height: 40px;
     max-width: 160px;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobile-nav {
+    display: block;
+  }
+
+  .mobile-nav-list {
+    justify-content: center;
+    justify-self: center;
+    align-items: center;
   }
 }

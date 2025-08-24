@@ -8,10 +8,16 @@
 }
 
 @font-face {
-  font-family: 'Mattone';
-  src: url('./fonts/Mattone-Regular.woff2') format('woff2'),
-       url('./fonts/Mattone-Regular.woff') format('woff'),
-       sans-serif;
+  font-family: "Mattone";
+  src: url("/fonts/Mattone-Regular.woff2") format("woff2"),
+    url("/fonts/Mattone-Regular.woff") format("woff"), sans-serif;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Apfel";
+  src: url("/fonts/ApfelGrotezk-Regular.woff2") format("woff2"),
+    url("/fonts/ApfelGrotezk-Regular.woff") format("woff"), sans-serif;
   font-display: swap;
 }
 
@@ -19,12 +25,12 @@
   min-height: 100vh;
   padding: 2rem;
   background: linear-gradient(
-    color-mix(in srgb, var(--primary-purple) 85%, transparent),
-    color-mix(in srgb, var(--primary-dark) 95%, transparent)
-  ),
-  url("/Santino_sovraimpressione.png") left center/cover no-repeat;
+      color-mix(in srgb, var(--primary-purple) 85%, transparent),
+      color-mix(in srgb, var(--primary-dark) 95%, transparent)
+    ),
+    url("/Santino_sovraimpressione.png") left center/cover no-repeat;
   color: var(--primary-light);
-  font-family: 'Mattone', sans-serif;
+  font-family: "Mattone", sans-serif;
 }
 
 .story-content {
@@ -36,6 +42,7 @@ h1 {
   font-size: 4rem;
   line-height: 1;
   margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 h2 {
@@ -43,6 +50,7 @@ h2 {
   margin-bottom: 3rem;
   color: var(--primary-teal);
   font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
 h3 {
@@ -50,11 +58,12 @@ h3 {
   margin-bottom: 1.5rem;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--primary-purple);
+  color: var(--primary-light);
 }
 
 .story-main {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
   gap: 2rem;
   margin-bottom: 3rem;
 }
@@ -65,11 +74,22 @@ h3 {
   padding: 2rem;
   border-radius: 8px;
   border: 1px solid rgba(253, 255, 252, 0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.story-column.full-width {
+  grid-column: 1 / -1;
+  background: rgba(253, 255, 252, 0.15);
 }
 
 .story-text {
   font-size: 1.1rem;
   line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.story-text:last-child {
+  margin-bottom: 0;
 }
 
 .highlight-red {
@@ -103,15 +123,18 @@ ul {
 
 li {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 1rem;
   margin-bottom: 1.2rem;
   font-size: 1.1rem;
+  line-height: 1.5;
 }
 
 .value-icon {
   font-size: 1.5rem;
   color: var(--primary-teal);
+  flex-shrink: 0;
+  margin-top: 0.1rem;
 }
 
 .quote-box {
@@ -122,11 +145,70 @@ li {
   font-size: 1.3rem;
   line-height: 1.6;
   font-style: italic;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Strong tags in battle items get teal color */
+li strong {
+  color: var(--primary-teal);
+}
+
+/* Strong tags in other sections remain white */
+.story-text strong {
+  color: var(--primary-light);
+  font-weight: 700;
 }
 
 @media (max-width: 768px) {
-  h1 { font-size: 3rem; }
-  h2 { font-size: 1.5rem; }
-  .story-main { grid-template-columns: 1fr; }
-  .quote-box { padding: 1.5rem; }
+  .story-container {
+    padding: 1rem;
+  }
+  
+  h1 {
+    font-size: 3rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
+  
+  .story-main {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .story-column {
+    padding: 1.5rem;
+  }
+  
+  .quote-box {
+    padding: 1.5rem;
+    font-size: 1.1rem;
+  }
+  
+  .story-text {
+    font-size: 1rem;
+  }
+  
+  li {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  .story-column {
+    padding: 1rem;
+  }
+  
+  .quote-box {
+    padding: 1rem;
+  }
 }

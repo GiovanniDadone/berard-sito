@@ -1,10 +1,11 @@
 // src/App.jsx
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import ChiSono from './pages/ChiSono';
 import Proposte from './pages/Proposte';
 import Contatti from './pages/Contatti';
+import Home from './pages/Home';
 // Importa le altre pagine qui...
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
     <Router>
       <Layout>
         <Routes>
-          <Route path="/" element={<ChiSono />} />
+          <Route path="/" element={<Home />} />
           <Route path="/chi-sono" element={<ChiSono />} />
           {<Route path="/proposte" element={<Proposte />} /> }
           {<Route path="/contatti" element={<Contatti />} />}

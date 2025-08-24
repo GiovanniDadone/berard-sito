@@ -18,52 +18,59 @@ const Contatti = () => {
             Lasciami la tua mail e camminiamo insieme verso il 28 settembre.
           </h2>
         </section>
-
         <section className="contacts-main">
           <div className="contact-card">
-            <div className="contact-icon facebook">📘</div>
+            <div className="contact-icon facebook">
+              <img src="/facebook.png" alt="Facebook" />
+            </div>
             <h3>Facebook</h3>
             <p className="contact-text">
               Seguimi per <span className="highlight-teal">aggiornamenti</span>{" "}
               e<span className="highlight-red"> discussioni politiche</span>
             </p>
             <a
-              href="https://facebook.com/chiaraberard"
+              href="https://facebook.com/profile.php?id=61569104398518"
               className="contact-link"
             >
               facebook.com/chiaraberard
             </a>
           </div>
-
           <div className="contact-card">
-            <div className="contact-icon instagram">📷</div>
+            <div className="contact-icon instagram">
+              <img src="/instagram.png" alt="Instagram" />
+            </div>
             <h3>Instagram</h3>
             <p className="contact-text">
               Scopri il <span className="highlight-teal">dietro le quinte</span>
               della mia campagna
             </p>
             <a
-              href="https://instagram.com/chiara.berard"
+              href="https://instagram.com/adolescenzafumogeno"
               className="contact-link"
             >
-              @chiara.berard
+              @adolescenzafumogeno
             </a>
           </div>
-
           <div className="contact-card">
-            <div className="contact-icon tiktok">🎵</div>
+            <div className="contact-icon tiktok">
+              <img src="/tiktok.png" alt="TikTok" />
+            </div>
             <h3>TikTok</h3>
             <p className="contact-text">
               Contenuti <span className="highlight-red">dinamici</span> e
               <span className="highlight-teal">coinvolgenti</span>
             </p>
-            <a href="https://tiktok.com/@chiaraberard" className="contact-link">
-              @chiaraberard
+            <a
+              href="https://tiktok.com/@chiaraisabelle"
+              className="contact-link"
+            >
+              @chiaraisabelle
             </a>
           </div>
-
           <div className="contact-card">
-            <div className="contact-icon whatsapp">💬</div>
+            <div className="contact-icon whatsapp">
+              <img src="/whatsapp.png" alt="WhatsApp" />
+            </div>
             <h3>WhatsApp</h3>
             <p className="contact-text">
               Scrivimi per domande dirette e suggerimenti
@@ -72,23 +79,20 @@ const Contatti = () => {
               +39 390 123 4567
             </a>
           </div>
-
           <div className="contact-card">
-            <div className="contact-icon email">✉️</div>
+            <div className="contact-icon email">
+              <img src="/mail.png" alt="Email" />
+            </div>
             <h3>Email</h3>
             <p className="contact-text">
               Per <span className="highlight-teal">collaborazioni</span> e
               <span className="highlight-teal">proposte ufficiali</span>
             </p>
-            <a
-              href="mailto:chiara.berard@valleostaaperta.it"
-              className="contact-link"
-            >
-              chiara.berard@valleostaaperta.it
+            <a href="mailto:scrivimi@chiaraberard.it" className="contact-link">
+              scrivimi@chiaraberard.it
             </a>
           </div>
         </section>
-
         <section>
           <div className="quote-box">
             <p>

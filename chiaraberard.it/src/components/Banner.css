@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'Mattone';
-  src: url('./fonts/Mattone-Regular.woff2') format('woff2'),
-       url('./fonts/Mattone-Regular.woff') format('woff'),
+  src: url('/fonts/Mattone-Regular.woff2') format('woff2'),
+       url('/fonts/Mattone-Regular.woff') format('woff'),
        sans-serif;
   font-display: swap;
 }
