@@ -6,6 +6,7 @@ import ChiSono from './pages/ChiSono';
 import Proposte from './pages/Proposte';
 import Contatti from './pages/Contatti';
 import Home from './pages/Home';
+import './Global.css';
 // Importa le altre pagine qui...
 
 function App() {

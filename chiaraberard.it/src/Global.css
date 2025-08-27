@@ -1,0 +1,253 @@
+/* Base Styles - Stili comuni per tutte le pagine */
+:root {
+  --primary-red: #fe0b0b;
+  --primary-teal: #22bfac;
+  --primary-purple: #8447ff;
+  --primary-dark: #181114;
+  --primary-light: #fdfffc;
+  --shadow-sm: 0 2px 4px rgba(24, 17, 20, 0.1);
+  --shadow-md: 0 4px 8px rgba(24, 17, 20, 0.12);
+  --shadow-lg: 0 8px 16px rgba(24, 17, 20, 0.15);
+  --shadow-xl: 0 20px 60px rgba(24, 17, 20, 0.3);
+  --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 16px;
+  --border-radius-xl: 24px;
+}
+
+/* Font Faces */
+@font-face {
+  font-family: "Apfel";
+  src: url("/fonts/ApfelGrotezk-Regular.woff2") format("woff2"),
+    url("/fonts/ApfelGrotezk-Regular.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mattone";
+  src: url("/fonts/Mattone-Regular.woff2") format("woff2"),
+    url("/fonts/Mattone-Regular.woff") format("woff");
+  font-display: swap;
+}
+
+/* Base Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Apfel", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  color: var(--primary-dark);
+  background-color: var(--primary-purple);
+}
+
+/* Layout Common */
+.main-container {
+  min-height: 100vh;
+  background: var(--primary-purple);
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Typography */
+.title-primary {
+  font-family: "Mattone", sans-serif;
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: 800;
+  color: var(--primary-light);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: 2rem;
+}
+
+.title-secondary {
+  font-family: "Mattone", sans-serif;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.text-body {
+  font-family: "Apfel", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.text-small {
+  font-family: "Apfel", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Color Utilities */
+.text-red { color: var(--primary-red); }
+.text-teal { color: var(--primary-teal); }
+.text-purple { color: var(--primary-purple); }
+.text-light { color: var(--primary-light); }
+.text-dark { color: var(--primary-dark); }
+
+.bg-red { background-color: var(--primary-red); }
+.bg-teal { background-color: var(--primary-teal); }
+.bg-purple { background-color: var(--primary-purple); }
+.bg-light { background-color: var(--primary-light); }
+.bg-dark { background-color: var(--primary-dark); }
+
+/* Spacing Utilities */
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+.mb-5 { margin-bottom: 3rem; }
+.mb-6 { margin-bottom: 4rem; }
+
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+.mt-5 { margin-top: 3rem; }
+.mt-6 { margin-top: 4rem; }
+
+.p-1 { padding: 0.5rem; }
+.p-2 { padding: 1rem; }
+.p-3 { padding: 1.5rem; }
+.p-4 { padding: 2rem; }
+.p-5 { padding: 3rem; }
+
+/* Card Components */
+.card {
+  background: rgba(253, 255, 252, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(253, 255, 252, 0.2);
+  border-radius: var(--border-radius-md);
+  padding: 2rem;
+  transition: var(--transition-base);
+  box-shadow: var(--shadow-md);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  background: rgba(253, 255, 252, 0.15);
+}
+
+.card-dark {
+  background: var(--primary-dark);
+  color: var(--primary-light);
+  border: none;
+}
+
+.card-dark:hover {
+  background: var(--primary-dark);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Button Components */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: var(--border-radius-xl);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition-base);
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn-primary {
+  background: var(--primary-teal);
+  color: var(--primary-light);
+}
+
+.btn-primary:hover {
+  background: var(--primary-light);
+  color: var(--primary-purple);
+  transform: scale(1.05);
+}
+
+/* Grid System */
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid-1 { grid-template-columns: 1fr; }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-auto { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+@keyframes colorPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .content-wrapper {
+    padding: 1.5rem;
+  }
+  
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    padding: 1rem;
+  }
+  
+  .card {
+    padding: 1.5rem;
+  }
+  
+  .title-primary {
+    margin-bottom: 1.5rem;
+  }
+  
+  .title-secondary {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-wrapper {
+    padding: 0.75rem;
+  }
+  
+  .card {
+    padding: 1rem;
+  }
+  
+  .text-body {
+    font-size: 1rem;
+  }
+}

@@ -1,25 +1,4 @@
-/* Contatti.css */
-:root {
-  --primary-red: #fe0b0b;
-  --primary-teal: #22bfac;
-  --primary-purple: #8447ff;
-  --primary-dark: #181114;
-  --primary-light: #fdfffc;
-}
-
-@font-face {
-  font-family: "Mattone";
-  src: url("/fonts/Mattone-Regular.woff2") format("woff2"),
-    url("/fonts/Mattone-Regular.woff") format("woff"), sans-serif;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Apfel";
-  src: url("/fonts/ApfelGrotezk-Regular.woff2") format("woff2"),
-    url("/fonts/ApfelGrotezk-Regular.woff") format("woff"), sans-serif;
-  font-display: swap;
-}
+/* Contatti.css - Uniformato con base styles */
 
 .contacts-container {
   min-height: 100vh;
@@ -35,7 +14,7 @@
 
 .intro-section {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
   padding: 0 1rem;
 }
 
@@ -43,14 +22,17 @@
   font-family: "Mattone", sans-serif;
   font-size: clamp(2rem, 6vw, 4rem);
   font-weight: 800;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-light);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .contact-intro-text {
   font-size: clamp(1rem, 2.5vw, 1.5rem);
   font-family: "Apfel", sans-serif;
-  line-height: 1.4;
+  line-height: 1.6;
   margin-bottom: 1.5rem;
+  opacity: 0.9;
 }
 
 .contact-reach {
@@ -58,23 +40,24 @@
   font-size: clamp(1.2rem, 3vw, 1.8rem);
   margin: 0 auto;
   max-width: 800px;
+  font-weight: 500;
 }
 
 .contacts-main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 .contact-card {
   background: rgba(253, 255, 252, 0.1);
   backdrop-filter: blur(5px);
   padding: 2rem;
-  border-radius: 12px;
+  border-radius: var(--border-radius-md);
   border: 1px solid rgba(253, 255, 252, 0.2);
   text-align: center;
-  transition: all 0.3s ease;
+  transition: var(--transition-base);
   position: relative;
   overflow: hidden;
 }
@@ -83,23 +66,25 @@
   transform: translateY(-5px);
   border-color: var(--primary-teal);
   box-shadow: 0 10px 20px rgba(34, 191, 172, 0.2);
+  background: rgba(253, 255, 252, 0.15);
 }
 
 .contact-icon {
   border-radius: 50%;
   width: 80px;
   height: 80px;
-  margin: 0 auto 1rem;
+  margin: 0 auto 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  transition: var(--transition-base);
+  font-size: 2rem;
+  color: var(--primary-light);
 }
 
 .contact-icon.facebook {
   background: #1877f2;
 }
-
 .contact-icon.instagram {
   background: linear-gradient(
     45deg,
@@ -110,15 +95,12 @@
     #bc1888 100%
   );
 }
-
 .contact-icon.tiktok {
   background: #000000;
 }
-
 .contact-icon.whatsapp {
   background: #25d366;
 }
-
 .contact-icon.email {
   background: var(--primary-purple);
 }
@@ -128,10 +110,11 @@
 }
 
 .contact-text {
-  font-family: "Mattone", sans-serif;
+  font-family: "Apfel", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
+  opacity: 0.9;
 }
 
 .contact-link {
@@ -140,10 +123,11 @@
   font-weight: 600;
   font-size: 1.1rem;
   padding: 0.8rem 1.5rem;
-  border-radius: 25px;
+  border-radius: var(--border-radius-xl);
   display: inline-block;
   background-color: var(--primary-teal);
-  transition: all 0.3s ease;
+  transition: var(--transition-base);
+  font-family: "Apfel", sans-serif;
 }
 
 .contact-link:hover {
@@ -163,33 +147,53 @@
 }
 
 .quote-box {
-  background: var(--primary-purple);
+  background: linear-gradient(
+    135deg,
+    var(--primary-purple),
+    var(--primary-teal)
+  );
   padding: 2rem;
-  border-radius: 12px;
+  border-radius: var(--border-radius-md);
   text-align: center;
-  font-size: 1.3rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
   line-height: 1.6;
   font-style: italic;
-  margin-top: 2rem;
+  margin-top: 3rem;
+  box-shadow: var(--shadow-md);
+  font-family: "Apfel", sans-serif;
 }
 
-/* Responsività */
+/* Responsive Design */
 @media (max-width: 768px) {
+  .contacts-container {
+    padding: 1.5rem;
+  }
+
   .intro-section {
-    margin-bottom: 2rem;
-    padding: 0 1rem;
+    margin-bottom: 3rem;
+    padding: 0 0.5rem;
   }
 
-  .contact-title {
-    font-size: 2.5rem;
+  .contacts-main {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
   }
 
-  .contact-intro-text {
-    font-size: 1.2rem;
+  .contact-card {
+    padding: 1.5rem;
   }
 
-  .contact-reach {
-    font-size: 1.2rem;
+  .contact-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 1.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .quote-box {
+    padding: 1.5rem;
+    margin-top: 2rem;
   }
 }
 
@@ -198,29 +202,18 @@
     padding: 1rem;
   }
 
-  .contact-title {
-    font-size: 2rem;
-  }
-
-  .contact-intro-text {
-    font-size: 1rem;
-  }
-
-  .contact-reach {
-    font-size: 1rem;
-  }
-
   .contact-card {
-    padding: 1.2rem;
+    padding: 1.25rem;
   }
 
   .contact-icon {
     width: 60px;
     height: 60px;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   .quote-box {
-    padding: 1.2rem;
-    font-size: 1rem;
+    padding: 1.25rem;
   }
 }
