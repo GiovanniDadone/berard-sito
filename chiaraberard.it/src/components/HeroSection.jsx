@@ -1,5 +1,6 @@
 // HeroSection.jsx
 import React from "react";
+import { Link } from "react-router-dom";
 import "./HeroSection.css";
 
 const HeroSection = () => {
@@ -13,21 +14,19 @@ const HeroSection = () => {
                 src="/Santino_sovraimpressione_Chiara.png"
                 className="hero-image"
                 loading="eager"
+                alt="Chiara Berard"
               />
             </div>
           </div>
-          
           <div className="hero-text-section">
             <div className="hero-text-content">
-              
-              <h1 className="hero-title">
-                Mi chiamo <span className="title-highlight">Chiara Berard</span>
-              </h1>
-              
+              <h1 className="hero-title">Mi chiamo Chiara Berard</h1>
               <div className="hero-description">
-                <p>Una voce autentica per la Valle d'Aosta, con 13 anni di impegno per i diritti civili e il progresso sociale.</p>
+                <p>
+                  Una voce autentica per la Valle d'Aosta, con 13 anni di
+                  impegno per i diritti civili e il progresso sociale.
+                </p>
               </div>
-              
               <div className="hero-call-to-action">
                 <div className="cta-item">
                   <div className="cta-icon">📆</div>
@@ -36,7 +35,6 @@ const HeroSection = () => {
                     <p>Ricorda la data!</p>
                   </div>
                 </div>
-                
                 <div className="cta-item">
                   <div className="cta-icon">✍️</div>
                   <div className="cta-content">
@@ -45,10 +43,13 @@ const HeroSection = () => {
                   </div>
                 </div>
               </div>
-              
               <div className="hero-buttons">
-                <button className="btn-primary">Scopri il programma</button>
-                <button className="btn-secondary">Contattami</button>
+                <Link to="/proposte" className="btn-primary">
+                  Scopri il programma
+                </Link>
+                <Link to="/contatti" className="btn-secondary">
+                  Contattami
+                </Link>
               </div>
             </div>
           </div>

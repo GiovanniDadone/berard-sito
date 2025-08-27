@@ -24,11 +24,7 @@
 .story-container {
   min-height: 100vh;
   padding: 2rem;
-  background: linear-gradient(
-      color-mix(in srgb, var(--primary-purple) 85%, transparent),
-      color-mix(in srgb, var(--primary-dark) 95%, transparent)
-    ),
-    url("/Santino_sovraimpressione.png") left center/cover no-repeat;
+  background: var(--primary-purple);
   color: var(--primary-light);
   font-family: "Mattone", sans-serif;
 }
@@ -48,7 +44,12 @@ h1 {
 h2 {
   font-size: 1.8rem;
   margin-bottom: 3rem;
-  color: var(--primary-teal);
+  color: var(--primary-red);
+  background-color: var(--primary-light);
+  width: 45%;
+  min-width: min-content;
+  border-radius: 12px;
+  padding-left: 4%;
   font-weight: 600;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
@@ -58,7 +59,7 @@ h3 {
   margin-bottom: 1.5rem;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--primary-purple);
-  color: var(--primary-light);
+  color: var(--primary-red);
 }
 
 .story-main {

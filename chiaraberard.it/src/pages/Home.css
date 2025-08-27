@@ -16,6 +16,13 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Mattone";
+  src: url("/fonts/Mattone-Regular.woff2") format("woff2"),
+    url("/fonts/Mattone-Regular.woff") format("woff"), sans-serif;
+  font-display: swap;
+}
+
 /* Base Reset */
 * {
   box-sizing: border-box;
@@ -24,7 +31,8 @@
 }
 
 body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
   line-height: 1.6;
   color: var(--primary-dark);
   background-color: var(--primary-light);
@@ -33,7 +41,7 @@ body {
 /* Main Container */
 .main-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--primary-light) 0%, rgba(34, 191, 172, 0.1) 50%, rgba(132, 71, 255, 0.1) 100%);
+  background-color: var(--primary-purple);
 }
 
 /* Stats Section */
@@ -45,10 +53,15 @@ body {
 }
 
 .stats-title {
+  text-align: center;
+  font-family: "Mattone";
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 3rem;
-  color: var(--primary-dark);
+  margin-bottom: 5.6rem;
+  color: var(--primary-red);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .stats-grid {
@@ -94,39 +107,45 @@ body {
 }
 
 .stat-card--red::after {
-  background: linear-gradient(0deg, 
-    rgba(254, 11, 11, 0.8) 0%, 
-    rgba(254, 11, 11, 0.5) 30%, 
-    rgba(254, 11, 11, 0.2) 70%, 
-    transparent 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(254, 11, 11, 0.8) 0%,
+    rgba(254, 11, 11, 0.5) 30%,
+    rgba(254, 11, 11, 0.2) 70%,
+    transparent 100%
+  );
 }
 
 .stat-card--teal::after {
-  background: linear-gradient(0deg, 
-    rgba(34, 191, 172, 0.8) 0%, 
-    rgba(34, 191, 172, 0.5) 30%, 
-    rgba(34, 191, 172, 0.2) 70%, 
-    transparent 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(34, 191, 172, 0.8) 0%,
+    rgba(34, 191, 172, 0.5) 30%,
+    rgba(34, 191, 172, 0.2) 70%,
+    transparent 100%
+  );
 }
 
 .stat-card--purple::after {
-  background: linear-gradient(0deg, 
-    rgba(132, 71, 255, 0.8) 0%, 
-    rgba(132, 71, 255, 0.5) 30%, 
-    rgba(132, 71, 255, 0.2) 70%, 
-    transparent 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(132, 71, 255, 0.8) 0%,
+    rgba(132, 71, 255, 0.5) 30%,
+    rgba(132, 71, 255, 0.2) 70%,
+    transparent 100%
+  );
 }
 
 .stat-card[data-bg="political"]::before {
-  background-image: url('/conferenza.jpg');
+  background-image: url("/conferenza.jpg");
 }
 
 .stat-card[data-bg="pride"]::before {
-  background-image: url('/pride.jpeg');
+  background-image: url("/pride.jpeg");
 }
 
 .stat-card[data-bg="passion"]::before {
-  background-image: url('https://images.unsplash.com/photo-1516062423079-7ca13cdc7f5a?w=1600&q=95');
+  background-image: url("https://images.unsplash.com/photo-1516062423079-7ca13cdc7f5a?w=1600&q=95");
 }
 
 .stat-card:hover {
@@ -141,24 +160,30 @@ body {
 }
 
 .stat-card--red:hover::after {
-  background: linear-gradient(135deg, 
-    rgba(254, 11, 11, 0.6) 0%, 
-    rgba(254, 11, 11, 0.2) 50%, 
-    rgba(24, 17, 20, 0.6) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(254, 11, 11, 0.6) 0%,
+    rgba(254, 11, 11, 0.2) 50%,
+    rgba(24, 17, 20, 0.6) 100%
+  );
 }
 
 .stat-card--teal:hover::after {
-  background: linear-gradient(135deg, 
-    rgba(34, 191, 172, 0.6) 0%, 
-    rgba(34, 191, 172, 0.2) 50%, 
-    rgba(24, 17, 20, 0.6) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(34, 191, 172, 0.6) 0%,
+    rgba(34, 191, 172, 0.2) 50%,
+    rgba(24, 17, 20, 0.6) 100%
+  );
 }
 
 .stat-card--purple:hover::after {
-  background: linear-gradient(135deg, 
-    rgba(132, 71, 255, 0.6) 0%, 
-    rgba(132, 71, 255, 0.2) 50%, 
-    rgba(24, 17, 20, 0.6) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(132, 71, 255, 0.6) 0%,
+    rgba(132, 71, 255, 0.2) 50%,
+    rgba(24, 17, 20, 0.6) 100%
+  );
 }
 
 .stat-number {
@@ -203,6 +228,25 @@ body {
     min-height: 220px;
   }
 
+  /* RIMUOVI ZOOM E SISTEMA IMMAGINI SU MOBILE */
+  .stat-card:hover {
+    transform: none;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .stat-card::before {
+    transform: scale(1);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.6;
+  }
+
+  .stat-card:hover::before {
+    transform: scale(1);
+    opacity: 0.6;
+    filter: contrast(1) brightness(1) saturate(1);
+  }
+
   .stat-number {
     font-size: 3rem;
   }
@@ -224,6 +268,25 @@ body {
   .stat-card {
     padding: 2rem 1.5rem;
     min-height: 200px;
+  }
+
+  /* RIMUOVI ZOOM E SISTEMA IMMAGINI SU MOBILE PICCOLO */
+  .stat-card:hover {
+    transform: none;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .stat-card::before {
+    transform: scale(1);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.6;
+  }
+
+  .stat-card:hover::before {
+    transform: scale(1);
+    opacity: 0.6;
+    filter: contrast(1) brightness(1) saturate(1);
   }
 
   .stat-number {
