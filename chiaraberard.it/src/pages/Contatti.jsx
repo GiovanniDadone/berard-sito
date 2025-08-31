@@ -21,13 +21,12 @@ const Contatti = () => {
 
         <section className="contacts-main">
           <div className="contact-card">
-            <div className="contact-icon facebook">
+            <div className="contact-icon">
               <img src="/facebook.png" alt="Facebook" />
             </div>
             <h3>Facebook</h3>
             <p className="contact-text">
-              Seguimi per <span className="highlight-teal">aggiornamenti</span>{" "}
-              e <span className="highlight-red">discussioni politiche</span>
+              Seguimi per aggiornamenti e discussioni politiche
             </p>
             <a
               href="https://facebook.com/profile.php?id=61569104398518"
@@ -37,13 +36,12 @@ const Contatti = () => {
             </a>
           </div>
           <div className="contact-card">
-            <div className="contact-icon instagram">
+            <div className="contact-icon">
               <img src="/instagram.png" alt="Instagram" />
             </div>
             <h3>Instagram</h3>
             <p className="contact-text">
-              Scopri il <span className="highlight-teal">dietro le quinte</span>{" "}
-              della mia campagna
+              Scopri il dietro le quinte della mia campagna
             </p>
             <a
               href="https://instagram.com/adolescenzafumogeno"
@@ -53,14 +51,11 @@ const Contatti = () => {
             </a>
           </div>
           <div className="contact-card">
-            <div className="contact-icon tiktok">
+            <div className="contact-icon">
               <img src="/tiktok.png" alt="TikTok" />
             </div>
             <h3>TikTok</h3>
-            <p className="contact-text">
-              Contenuti <span className="highlight-red">dinamici</span> e{" "}
-              <span className="highlight-teal">coinvolgenti</span>
-            </p>
+            <p className="contact-text">Contenuti dinamici e coinvolgenti</p>
             <a
               href="https://tiktok.com/@chiaraisabelle"
               className="contact-link"
@@ -69,7 +64,7 @@ const Contatti = () => {
             </a>
           </div>
           <div className="contact-card">
-            <div className="contact-icon whatsapp">
+            <div className="contact-icon">
               <img src="/whatsapp.png" alt="WhatsApp" />
             </div>
             <h3>WhatsApp</h3>
@@ -81,15 +76,19 @@ const Contatti = () => {
             </a>
           </div>
           <div className="contact-card">
-            <div className="contact-icon email">
+            <div className="contact-icon">
               <img src="/mail.png" alt="Email" />
             </div>
             <h3>Email</h3>
             <p className="contact-text">
-              Per <span className="highlight-teal">collaborazioni</span> e{" "}
-              <span className="highlight-teal">proposte ufficiali</span>
+              Per collaborazioni e proposte ufficiali
             </p>
-            <a href="mailto:scrivimi@chiaraberard.it" className="contact-link">
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=scrivimi@chiaraberard.it"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-link"
+            >
               scrivimi@chiaraberard.it
             </a>
           </div>

@@ -1,0 +1,24 @@
+.quote-box {
+  background: var(--primary-purple);
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.3rem;
+  color: var(--primary-light);
+  line-height: 1.6;
+  font-style: italic;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .quote-box {
+    padding: 1.5rem;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .quote-box {
+    padding: 1rem;
+  }
+}

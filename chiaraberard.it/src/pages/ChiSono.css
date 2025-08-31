@@ -1,5 +1,20 @@
 /* ChiSono.css - Uniformato con base styles */
 
+/* Font Faces */
+@font-face {
+  font-family: "Apfel";
+  src: url("/fonts/ApfelGrotezk-Regular.woff2") format("woff2"),
+    url("/fonts/ApfelGrotezk-Regular.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mattone";
+  src: url("/fonts/Mattone-Regular.woff2") format("woff2"),
+    url("/fonts/Mattone-Regular.woff") format("woff");
+  font-display: swap;
+}
+
 /* Dots Animation */
 .dots-container {
   display: flex;
@@ -176,7 +191,6 @@
   color: var(--primary-light);
   position: relative;
   z-index: 2;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .stat-label {
@@ -185,6 +199,91 @@
   font-weight: 500;
   position: relative;
   z-index: 2;
+}
+
+/* Card cliccabili per aprire le modal */
+.items-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  padding: 2rem 0;
+}
+
+.items-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-right: 3%;
+  font-size: 2rem;
+  color: var(--primary-red);
+  font-family: "Mattone", sans-serif;
+}
+
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 1rem;
+  width: 100%;
+  max-width: 1200px; /* Limita la larghezza massima per schermi molto grandi */
+}
+
+.item-card {
+  background: rgba(253, 255, 252, 0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.item-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: var(--primary-purple);
+}
+
+.item-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.item-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-light);
+  font-weight: bold;
+  font-family: "Mattone", sans-serif;
+}
+
+.item-card p {
+  color: var(--primary-light);
+  line-height: 1.6;
+  font-size: 0.95rem;
+  font-family: "Apfel", sans-serif;
+}
+
+@media (max-width: 1400px) {
+  .items-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 0.5rem;
+  }
+}
+
+/* Responsive per schermi medi (sotto 1024px) */
+@media (max-width: 1024px) {
+  .items-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 0.5rem;
+  }
 }
 
 /* Responsive Adjustments */
@@ -216,6 +315,24 @@
   .stat-item {
     padding: 1.25rem;
   }
+
+  .items-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0.5rem;
+  }
+
+  .item-card {
+    padding: 1rem;
+  }
+
+  .item-card img {
+    height: 150px;
+  }
+
+  .items-section h2 {
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -233,5 +350,48 @@
 
   .dots-container {
     margin-bottom: 2rem;
+  }
+
+  .items-section {
+    margin-top: 2rem;
+    padding: 1rem 0;
+  }
+
+  .items-section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .items-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  .item-card {
+    padding: 0.75rem;
+    border-radius: 8px;
+  }
+
+  .item-card img {
+    height: 120px;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+  }
+
+  .item-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .item-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .item-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
   }
 }

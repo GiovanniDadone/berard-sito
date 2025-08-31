@@ -1,48 +1,76 @@
 @font-face {
-  font-family: 'Mattone';
-  src: url('/fonts/Mattone-Regular.woff2') format('woff2'),
-       url('/fonts/Mattone-Regular.woff') format('woff'),
-       sans-serif;
+  font-family: "Mattone";
+  src: url("/fonts/Mattone-Regular.woff2") format("woff2"),
+    url("/fonts/Mattone-Regular.woff") format("woff"), sans-serif;
   font-display: swap;
 }
 
 .banner-container {
   background: var(--primary-dark);
-  border: 3px solid var(--primary-purple);
-  padding: 6px 0;
-  margin: 16px 0;
-  box-shadow: 0 0 0 2px var(--primary-dark),
-              0 0 0 4px var(--primary-purple),
-              0 0 10px rgba(132, 71, 255, 0.4);
+  border: 2px solid var(--primary-purple);
+  padding: 3px 0;
+  margin: 0.5rem 0;
+  box-shadow: 0 0 0 1px var(--primary-dark), 0 0 0 3px var(--primary-purple),
+    0 0 8px rgba(132, 71, 255, 0.3);
   position: relative;
   overflow: hidden;
+  transform: scale(1.15);
 }
 
 .banner-text {
-  font-family: 'Mattone', sans-serif;
-  font-size: 17px;
+  font-family: "Mattone", sans-serif;
+  font-size: 14px;
   color: var(--primary-teal);
   margin: 0 16px;
-  padding: 5px 10px;
+  padding: 2px 8px;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  line-height: 1.4;
+  letter-spacing: 0.8px;
+  line-height: 1.2;
 }
 
 .banner-text::before {
-  content: '>>';
+  content: ">>";
   color: var(--primary-red);
-  margin-right: 8px;
-  font-size: 12px;
+  margin-right: 6px;
+  font-size: 10px;
 }
 
 .banner-text::after {
-  content: '<<';
+  content: "<<";
   color: var(--primary-red);
-  margin-left: 8px;
-  font-size: 12px;
+  margin-left: 6px;
+  font-size: 10px;
 }
 
 .marquee-container {
-  padding: 3px 0;
+  padding: 2px 0;
+}
+
+/* Responsive adjustments - mantenendo compattezza */
+@media (max-width: 768px) {
+  .banner-container {
+    margin: 0.375rem 0;
+    padding: 2px 0;
+  }
+  .banner-text {
+    font-size: 12px;
+    margin: 0 12px;
+    padding: 1px 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-container {
+    margin: 0.25rem 0;
+    padding: 1px 0;
+  }
+  .banner-text {
+    font-size: 11px;
+    margin: 0 10px;
+    padding: 1px 4px;
+  }
+  .banner-text::before,
+  .banner-text::after {
+    font-size: 8px;
+  }
 }
