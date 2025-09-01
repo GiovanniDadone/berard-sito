@@ -301,7 +301,7 @@ const Proposte = () => {
       animatedMedia: "/gif/8.mp4",
       title: "Salario Minimo",
       description:
-        "Istruzione accessibile e di qualità, rafforzando orientamento e diritto allo studio. Investimenti in strutture moderne, formazione continua dei docenti e programmi innovativi per preparare i giovani valdostani alle sfide del futuro.",
+        "In Valle d’Aosta vivere costa più che altrove, ma migliaia di persone che lavorano nei settori del turismo, della ristorazione, del commercio e dei servizi ricevono stipendi troppo bassi per garantire una vita dignitosa. Per fermare quest’ingiustizia e la fuga delle nuove generazioni costrette a emigrare, la proposta prevede l’introduzione di un salario minimo di 12 euro l’ora, superiore alla soglia nazionale di 9 euro, così da adeguarlo al reale costo della vita valdostana. La misura si articola su due livelli: negli appalti pubblici della Regione dovrà essere garantito il rispetto dei contratti collettivi e di una soglia minima inderogabile di 12 euro, per combattere i contratti “pirata” e lo sfruttamento con soldi pubblici. Sul versante privato, invece, verrà istituito un Registro del Salario Minimo Valdostano: le imprese che si impegnano volontariamente a garantire almeno 12 euro l’ora potranno iscriversi, ottenendo trasparenza verso i lavoratori e priorità nei bandi e nei contributi regionali. In questo modo chi paga “salari giusti” sarà sostenuto e riconosciuto, contribuendo a costruire una Valle più equa e solidale",
     },
     {
       id: 2,
@@ -309,7 +309,7 @@ const Proposte = () => {
       animatedMedia: "/gif/9.mp4",
       title: "Sanità",
       description:
-        "Rete dei trasporti più efficiente e sostenibile per collegare meglio territori e persone. Potenziamento del trasporto pubblico, infrastrutture per la mobilità dolce e soluzioni innovative per i collegamenti montani.",
+        "La salute è un diritto e deve essere garantita a tuttɘ. Non è più possibile accettare che venga trattata come un privilegio per chi può permetterselo. Per questo lotterò per maggiori investimenti nella sanità pubblica e un piano straordinario di assunzione di personale medico, infermieristico e tecnico, oggi insufficiente, anche a causa del blocco degli aumenti salariali e contrattuali. È urgente rafforzare i servizi territoriali e combattere con decisione il fenomeno delle liste d’attesa, che costringe troppe persone a rivolgersi al privato, alla sanità fuori regione o a rinunciare alle cure.Accanto alla cura del corpo, serve prendersi cura anche della mente. Proponiamo l’attivazione di una linea telefonica di supporto psicologico e la presenza stabile di psicologhe e psicologi nei presidi territoriali, accessibili gratuitamente e con programmi specifici di prevenzione al suicidio, soprattutto tra le persone più giovani. La salute mentale non può essere lasciata ai margini: deve diventare una priorità delle politiche sanitarie regionali.",
     },
     {
       id: 3,
@@ -317,7 +317,7 @@ const Proposte = () => {
       animatedMedia: "/gif/5.mp4",
       title: "Ambiente",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        "La Valle d’Aosta è tra i territori alpini più vulnerabili alla crisi climatica: scioglimento dei ghiacciai, eventi estremi, rischio idrogeologico crescente. Per questo proponiamo una legge-quadro regionale per il contrasto e l’adattamento al Cambiamento Climatico, con l’obiettivo di raggiungere la neutralità climatica al 2040. Una norma che unisca mitigazione (riduzione delle emissioni, sviluppo di comunità energetiche e dell’eolico, efficientamento energetico degli edifici) e adattamento (gestione delle acque come bene comune, vasche di raccolta per contrastare le siccità, difesa delle foreste e del territorio dai rischi idrogeologici). La legge istituirà un Piano Clima e Biodiversità, aggiornato ogni 5 anni, coordinato da una cabina di regia regionale coordinata con sindaci, ARPA ed esperti, per garantire trasparenza, scientificità e partecipazione. Gli ambiti prioritari saranno: il rilancio del trasporto pubblico locale (a partire dall’istituzione di linee di bus serali e la riapertura della ferrovia tra Aosta e Pré-Saint-Didier), il rafforzamento della produzione di energia rinnovabile, incentivando l’istituzione di Comunità Energetiche Regionali, la tutela delle aree protette (come Natura 2000, tra cui il Vallone delle Cime Bianche). Fondamentale sarà il coinvolgimento dei Comuni e delle comunità locali: ogni comune (supportato dalla regione) dovrà redigere un proprio Piano Clima, semplice e proporzionato alla sua dimensione, per recepire e applicare le linee guida regionali. Ispirandoci alla Loi Climat francese e alla legge sul clima dell’Emilia-Romagna, adattiamo le migliori pratiche al contesto valdostano, costruendo un modello di governance climatica che non lasci indietro nessuno e renda la Valle d’Aosta un territorio pioniere della giustizia climatica alpina. Un aspetto centrale della nostra proposta è l’introduzione del principio delle perdite e dei danni (Loss and Damage), già riconosciuto a livello internazionale. Questo principio afferma che chi subisce gli effetti più gravi della crisi climatica deve essere sostenuto e risarcito, anche quando le conseguenze non sono più reversibili. In Valle d’Aosta significa riconoscere e affrontare i costi sociali, economici e ambientali derivanti da frane, alluvioni, ondate di calore, perdita di ghiacciai e biodiversità. Vogliamo che la Regione istituisca un fondo dedicato alle perdite e ai danni climatici, alimentato anche da risorse europee, per sostenere economicamente comunità, imprese agricole, territori montani e famiglie colpite dagli eventi estremi, trasformando il principio di giustizia climatica in una politica concreta e solidale.",
     },
     {
       id: 4,
@@ -325,13 +325,13 @@ const Proposte = () => {
       animatedMedia: "/gif/6.mp4",
       title: "Diritti",
       description:
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.",
+        "Credo che una Valle d’Aosta più giusta passi anche da una vera educazione sessuo-affettiva nelle scuole. Non si tratta solo di insegnare nozioni biologiche, ma di trasmettere il valore del consenso, del rispetto reciproco e del sapersi rapportare con le altre persone. Un’educazione che contrasti l’ignoranza in tema sessuale, che educhi alla prevenzione e della protezione sessuale - la cui assenza aiuta la diffusione di infezioni sessualmente trasmissibili, su cui ci sono ancora molti stigma - e che dia a tutte le persone gli strumenti per vivere relazioni in modo sano, consapevole e libero da stereotipi. Mi batterò, inoltre, affinché la Regione Valle d’Aosta riconosca e sostenga la comunità LGBTQIA+ concedendo il Patrocinio ufficiale all’Aosta Pride. Sono tante le persone queer valdostane che decidono di andarsene perché non sentono di poter costruirsi un futuro qui. Da piccola ero quasi certa di dover scappare ed è incredibile che anche grazie al mio attivismo che sia nata prima Arcigay Queer VDA, di cui sono stata cofondatrice e vicepresidente, e poi l’Aosta Pride. Il sostegno regionale ad un momento come il pride non è solo un gesto simbolico, ma un atto concreto di vicinanza istituzionale a chi ogni giorno lotta contro discriminazioni e marginalizzazioni. Per noi, i diritti non sono mai “di qualcuno in più”, ma sempre un rafforzamento della democrazia e della libertà di tuttɘ.",
     },
     {
       id: 5,
       staticMedia: "/gif/10-stopped.jpg",
       animatedMedia: "/gif/10.mp4",
-      title: "Tornare",
+      title: "Tornare",  //WORK IN PROGRESS
       description:
         "Investimenti su rinnovabili ed efficienza energetica per ridurre costi e impatto ambientale. Comunità energetiche, solare sui tetti pubblici e sostegno alle famiglie per la transizione verde.",
     },
@@ -341,7 +341,7 @@ const Proposte = () => {
       animatedMedia: "/gif/7.mp4",
       title: "Palestina",
       description:
-        "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi.",
+        "La Valle d’Aosta deve schierarsi senza ambiguità dalla parte della pace e dei diritti umani. Per questo chiederò il riconoscimento ufficiale dello Stato di Palestina e la sospensione di tutti gli accordi regionali con Israele e le società israeliane, complici dell’occupazione. Non possiamo restare indifferenti di fronte al genocidio in corso a Gaza e alle condizioni di colonialismo e apartheid in Cisgiordania: la nostra Regione deve dirlo con chiarezza e agire di conseguenza. Combatterò, inoltre, affinché la Valle d’Aosta invii aiuti umanitari alla popolazione di Gaza e promuova l’invio di una delegazione ufficiale in Palestina, per testimoniare la vicinanza concreta della nostra comunità. Con questo impegno vorrei che la Valle d’Aosta diventi un punto di riferimento per chi, in Italia e in Europa, lotta per la libertà e l’autodeterminazione del popolo palestinese.",
     },
   ];
 
@@ -350,33 +350,32 @@ const Proposte = () => {
       id: 1,
       staticMedia: "/gif/1-stopped.jpg",
       animatedMedia: "/gif/1.mp4",
-      title: "Proposta Sociale",
-      description:
-        "Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis.",
+      title: "Sociale",
+      description: "Il diritto alla casa è una questione sociale cruciale anche ad Aosta. Da una ricerca di Regione Valle d’Aosta emerge che quasi il 27% dei genitori soli con figli vive in affitto, spesso con canoni che assorbono fino al 30% del reddito delle persone sole, mentre oltre un quarto delle famiglie ha difficoltà a sostenere le spese abitative. Questa fragilità colpisce in particolare le persone più giovani, i lavoratori precari e le famiglie straniere, che abitano mediamente in case più piccole e con peggiori condizioni abitative. A fronte di questi dati, serve un impegno concreto per rendere Aosta una città più giusta e inclusiva. Secondo i dati Openpolis, i comuni italiani spendono mediamente appena 1,28 euro pro capite per il diritto all’abitare, con forti disuguaglianze territoriali. Anche Aosta deve fare di più. La città deve adottare un Piano comunale per l’abitare, con il censimento e il recupero delle case sfitte, l’attivazione di un fondo per l’emergenza abitativa, accordi di canone concordato e progetti di housing sociale e co-housing. L’obiettivo è duplice: garantire alloggi dignitosi e accessibili a chi oggi è più in difficoltà, e ridare vita ai quartieri attraverso politiche abitative che siano anche occasioni di rigenerazione urbana e coesione sociale.",
     },
     {
       id: 2,
       staticMedia: "/gif/2-stopped.jpg",
       animatedMedia: "/gif/2.mp4",
-      title: "Proposta Cultura",
+      title: "Cultura",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sviluppo di spazi culturali accessibili, sostegno agli artisti locali e valorizzazione del patrimonio storico della città.",
+        "Ad Aosta quest’anno le temperature hanno superato i 40 gradi: un dato eccezionale che, con il cambiamento climatico, diventerà sempre più frequente. Per questo vorrei proporre un Piano comunale di adattamento urbano contro le isole di calore, che utilizzi le migliori pratiche internazionali. Le misure chiave riguardano la riforestazione urbana (piantumazioni mirate lungo viali e piazze, selezionando specie autoctone ad alta capacità di ombreggiamento e resistenza alla siccità), l’uso di tetti e pareti verdi negli edifici pubblici, l’introduzione di pavimentazioni riflettenti e permeabili per ridurre l’accumulo termico, e la creazione di corridoi blu-verdi che integrino verde urbano e gestione delle acque piovane. Questi interventi, già applicati in diverse città europee, permettono di abbassare le temperature fino a 2-3°C nelle aree urbane più dense, migliorando al tempo stesso la qualità dell’aria e la resilienza della città agli eventi estremi.",
     },
     {
       id: 3,
       staticMedia: "/gif/3-stopped.jpg",
       animatedMedia: "/gif/3.mp4",
-      title: "Proposta Turismo",
+      title: "Accessibiltà",
       description:
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Promozione di un turismo sostenibile che valorizzi le eccellenze locali e crei opportunità di lavoro qualificate per i giovani.",
+        "Una città accessibile per tuttə, indipendentemente dalle proprie disabilità. Da persona con una malattia cronica, che a volte mi costringe a una mobilità ridotta, e attivista per la disabilità e le neurodivergenze faccio parecchio caso all'accessibilità cittadina. Mi occupo attivamente di questo tema dal 2022 dentro e fuori l’Università di Torino. Ci tengo che sia effettuata una mappatura di tutta la città, con un comitato di cittadinə interessatə al tema, e venga messo in atto il PEBA (Piano di Eliminazione delle Barriere architettoniche).",
     },
     {
       id: 4,
       staticMedia: "/gif/4-stopped.jpg",
       animatedMedia: "/gif/4.mp4",
-      title: "Proposta Sport",
+      title: "Proposta Gaza",
       description:
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Promozione di un turismo sostenibile che valorizzi le eccellenze locali e crei opportunità di lavoro qualificate per i giovani.",
+        "In un momento segnato da guerra, ingiustizia e costanti violazioni dei diritti umani, nonché del diritto internazionale, Aosta può e deve farsi portavoce di un messaggio di pace, cooperazione e diritti, costruendo un ponte tra comunità diverse ma unite dall’idea che nessuna distanza sia troppo grande quando a unirci è l’umanità. Per questo porterò in consiglio comunale una proposta di Gemellaggio tra Aosta e la Città di Gaza come segnale concreto di solidarietà e vicinanza al popolo palestinese, trasformando un atto simbolico in un impegno politico e umano di grande valore. Facciamo di questo gemellaggio un segno tangibile di speranza e responsabilità internazionale.",
     },
   ];
 

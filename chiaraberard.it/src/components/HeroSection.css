@@ -21,6 +21,7 @@
   display: flex;
   align-items: center;
   padding: 2rem 0 0 0; /* Padding top aumentato, bottom rimosso */
+  margin-bottom: -1.5%;
   position: relative;
   overflow: hidden;
 }
@@ -245,6 +246,7 @@
   .hero-section {
     min-height: 50vh;
     padding: 1.5rem 0 0 0;
+    margin-bottom: 0%;
   }
   
   .hero-content {
@@ -286,6 +288,7 @@
   .hero-section {
     padding: 1rem 0 0 0;
     min-height: 45vh;
+    margin-bottom: 3%;
   }
   
   .hero-container {
