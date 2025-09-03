@@ -1,7 +1,18 @@
 // Contatti.jsx
+import { useSEO } from "../utils/seo";
 import "./Contatti.css";
 
 const Contatti = () => {
+  useSEO({
+    title:
+      "Chiara Berard - Candidata Valle d'Aosta Aperta | Elezioni Regionali 2025",
+    description:
+      "Sognare, lottare, restare. Chiara Berard candidata Valle d'Aosta Aperta per elezioni regionali 2025. Salario minimo, sanità pubblica, ambiente.",
+    canonical: "https://chiaraberard.it/",
+    ogImage: "https://chiaraberard.it/profile-image.png",
+    keywords:
+      "Chiara Berard, Valle d'Aosta, elezioni regionali, politica, salario minimo",
+  });
   return (
     <div className="contacts-container">
       <div className="contacts-content">

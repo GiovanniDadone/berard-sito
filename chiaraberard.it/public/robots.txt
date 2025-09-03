@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://chiaraberard.it/sitemap.xml

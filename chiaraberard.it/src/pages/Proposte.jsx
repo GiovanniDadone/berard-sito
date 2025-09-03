@@ -1,16 +1,17 @@
-import React, { useEffect, useRef, useState, useCallback } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { useSEO } from "../utils/seo";
 import "./Proposte.css";
 
 function useDragScroll() {
   const ref = useRef(null);
-  
+
   // Fix per garantire scroll orizzontale su tutti i browser
   useEffect(() => {
     setTimeout(() => {
       const scrollContainers = document.querySelectorAll(
         ".carousel-container.scroll-x"
       );
-      
+
       scrollContainers.forEach((container) => {
         // Forza solo le proprietà necessarie per lo scroll
         container.style.setProperty("display", "flex", "important");
@@ -18,7 +19,11 @@ function useDragScroll() {
         container.style.setProperty("flex-wrap", "nowrap", "important");
         container.style.setProperty("overflow-x", "auto", "important");
         container.style.setProperty("overflow-y", "hidden", "important");
-        container.style.setProperty("-webkit-overflow-scrolling", "touch", "important");
+        container.style.setProperty(
+          "-webkit-overflow-scrolling",
+          "touch",
+          "important"
+        );
         container.style.setProperty("scroll-behavior", "smooth", "important");
       });
     }, 100);
@@ -31,7 +36,7 @@ function useDragScroll() {
 
     // Controlla se siamo su mobile
     const isMobile = window.innerWidth <= 768;
-    
+
     // Su mobile, usa solo lo scroll nativo
     if (isMobile) {
       return;
@@ -354,6 +359,16 @@ const Proposte = () => {
     );
   };
 
+  useSEO({
+    title:
+      "Chiara Berard - Candidata Valle d'Aosta Aperta | Elezioni Regionali 2025",
+    description:
+      "Sognare, lottare, restare. Chiara Berard candidata Valle d'Aosta Aperta per elezioni regionali 2025. Salario minimo, sanità pubblica, ambiente.",
+    canonical: "https://chiaraberard.it/",
+    ogImage: "https://chiaraberard.it/profile-image.png",
+    keywords:
+      "Chiara Berard, Valle d'Aosta, elezioni regionali, politica, salario minimo",
+  });
   return (
     <div className="proposte-container">
       <div className="proposte-content">

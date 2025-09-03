@@ -1,8 +1,20 @@
 import Banner from "../components/Banner";
 import HeroSection from "../components/HeroSection";
+import { useSEO } from "../utils/seo";
 import "./Home.css";
 
 const Home = () => {
+  useSEO({
+    title:
+      "Chiara Berard - Candidata Valle d'Aosta Aperta | Elezioni Regionali 2025",
+    description:
+      "Sognare, lottare, restare. Chiara Berard candidata Valle d'Aosta Aperta per elezioni regionali 2025. Salario minimo, sanità pubblica, ambiente.",
+    canonical: "https://chiaraberard.it/",
+    ogImage: "https://chiaraberard.it/profile-image.png",
+    keywords:
+      "Chiara Berard, Valle d'Aosta, elezioni regionali, politica, salario minimo",
+  });
+
   return (
     <main className="main-container">
       <HeroSection />
@@ -14,9 +26,7 @@ const Home = () => {
       <section className="stats-section">
         <h2 className="stats-title">Insieme per il cambiamento</h2>
         <div className="stats-title">
-          <h3>
-            Testo di prova
-          </h3>
+          <h3>Testo di prova</h3>
           {/*DA METTERE QUI IL TESTO*/}
         </div>
         <div className="stats-grid">
@@ -40,11 +50,11 @@ const Home = () => {
           </div>
         </div>
         <img
-                src="/finto_santino.png"
-                className="santino"
-                loading="eager"
-                alt="Chiara Berard"
-              />
+          src="/finto_santino.png"
+          className="santino"
+          loading="eager"
+          alt="Chiara Berard"
+        />
       </section>
     </main>
   );

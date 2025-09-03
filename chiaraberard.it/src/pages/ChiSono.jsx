@@ -2,8 +2,8 @@ import { useState } from "react";
 import Banner from "../components/Banner";
 import Modal from "../components/Modal";
 import StorySection from "../components/StorySection";
+import { useSEO } from "../utils/seo";
 import "./ChiSono.css";
-import Quote from "../components/Quote";
 
 const ChiSono = () => {
   const [selectedItem, setSelectedItem] = useState(null);
@@ -51,6 +51,17 @@ const ChiSono = () => {
     setSelectedItem(null);
     setIsModalOpen(false);
   };
+
+  useSEO({
+    title:
+      "Chiara Berard - Candidata Valle d'Aosta Aperta | Elezioni Regionali 2025",
+    description:
+      "Sognare, lottare, restare. Chiara Berard candidata Valle d'Aosta Aperta per elezioni regionali 2025. Salario minimo, sanità pubblica, ambiente.",
+    canonical: "https://chiaraberard.it/",
+    ogImage: "https://chiaraberard.it/profile-image.png",
+    keywords:
+      "Chiara Berard, Valle d'Aosta, elezioni regionali, politica, salario minimo",
+  });
 
   return (
     <main className="main-container">
