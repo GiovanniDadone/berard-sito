@@ -74,6 +74,12 @@
   border-top: 1px solid rgba(253, 255, 252, 0.2);
 }
 
+.data {
+  font-size: 0.875rem;
+  opacity: 0.8;
+  padding-top: 0.3rem;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .footer-container {

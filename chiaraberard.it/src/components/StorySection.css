@@ -57,7 +57,7 @@ h3 {
   margin-bottom: 1.5rem;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--primary-purple);
-  color: var(--primary-red);
+  color: var(--primary-light);
 }
 
 .story-main {
@@ -68,7 +68,7 @@ h3 {
 }
 
 .story-column {
-  background: rgba(253, 255, 252, 0.3);
+  background: rgba(253, 255, 252, 0.2);
   backdrop-filter: blur(5px);
   padding: 2rem;
   border-radius: 8px;

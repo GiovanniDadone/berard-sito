@@ -190,7 +190,6 @@
 
 .quote-box::before,
 .quote-box::after {
-  content: '"';
   position: absolute;
   font-size: 4rem;
   color: rgba(253, 255, 252, 0.3);

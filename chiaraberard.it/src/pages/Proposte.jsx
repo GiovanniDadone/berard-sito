@@ -3,190 +3,81 @@ import "./Proposte.css";
 
 function useDragScroll() {
   const ref = useRef(null);
-
-  // Chrome-specific fix per forzare layout orizzontale
+  
+  // Fix per garantire scroll orizzontale su tutti i browser
   useEffect(() => {
-    const isChrome =
-      /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-
-    if (isChrome) {
-      setTimeout(() => {
-        const scrollContainers = document.querySelectorAll(
-          ".carousel-container.scroll-x"
-        );
-        scrollContainers.forEach((container) => {
-          // Forza le proprietà CSS per Chrome
-          container.style.setProperty("display", "flex", "important");
-          container.style.setProperty("flex-direction", "row", "important");
-          container.style.setProperty("flex-wrap", "nowrap", "important");
-          container.style.setProperty("overflow-x", "auto", "important");
-          container.style.setProperty("overflow-y", "hidden", "important");
-
-          // Forza le proprietà per gli item
-          const items = container.querySelectorAll(".carousel-item");
-          items.forEach((item) => {
-            item.style.setProperty("flex", "0 0 350px", "important");
-            item.style.setProperty("width", "350px", "important");
-            item.style.setProperty("min-width", "350px", "important");
-            item.style.setProperty("max-width", "350px", "important");
-            item.style.setProperty("display", "flex", "important");
-            item.style.setProperty("flex-direction", "column", "important");
-          });
-        });
-      }, 100);
-    }
+    setTimeout(() => {
+      const scrollContainers = document.querySelectorAll(
+        ".carousel-container.scroll-x"
+      );
+      
+      scrollContainers.forEach((container) => {
+        // Forza solo le proprietà necessarie per lo scroll
+        container.style.setProperty("display", "flex", "important");
+        container.style.setProperty("flex-direction", "row", "important");
+        container.style.setProperty("flex-wrap", "nowrap", "important");
+        container.style.setProperty("overflow-x", "auto", "important");
+        container.style.setProperty("overflow-y", "hidden", "important");
+        container.style.setProperty("-webkit-overflow-scrolling", "touch", "important");
+        container.style.setProperty("scroll-behavior", "smooth", "important");
+      });
+    }, 100);
   }, []);
 
+  // Gestione drag solo per desktop
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
 
+    // Controlla se siamo su mobile
+    const isMobile = window.innerWidth <= 768;
+    
+    // Su mobile, usa solo lo scroll nativo
+    if (isMobile) {
+      return;
+    }
+
     let isDown = false;
-    let hasScrolled = false;
     let startX = 0;
-    let startY = 0;
-    let startScrollLeft = 0;
-    let startTime = 0;
-
-    const SCROLL_THRESHOLD = 10;
-    const TIME_THRESHOLD = 200;
-
-    const onTouchStart = (e) => {
-      isDown = true;
-      hasScrolled = false;
-      startX = e.touches[0].clientX;
-      startY = e.touches[0].clientY;
-      startScrollLeft = el.scrollLeft;
-      startTime = Date.now();
-      el.classList.add("dragging");
-    };
-
-    const onTouchMove = (e) => {
-      if (!isDown) return;
-      const x = e.touches[0].clientX;
-      const y = e.touches[0].clientY;
-      const deltaX = Math.abs(x - startX);
-      const deltaY = Math.abs(y - startY);
-
-      if (deltaX > SCROLL_THRESHOLD && deltaX > deltaY) {
-        hasScrolled = true;
-        e.preventDefault();
-        const walk = startX - x;
-        // Chrome optimization: use requestAnimationFrame for smoother scrolling
-        requestAnimationFrame(() => {
-          el.scrollLeft = startScrollLeft + walk;
-        });
-        el.setAttribute("data-scrolling", "true");
-      }
-    };
-
-    const onTouchEnd = (e) => {
-      const endTime = Date.now();
-      const duration = endTime - startTime;
-      isDown = false;
-      el.classList.remove("dragging");
-
-      if (hasScrolled || duration > TIME_THRESHOLD) {
-        e.preventDefault();
-        e.stopPropagation();
-        setTimeout(() => {
-          el.removeAttribute("data-scrolling");
-          hasScrolled = false;
-        }, 150);
-      } else {
-        el.removeAttribute("data-scrolling");
-      }
-    };
-
-    const isTouchDevice =
-      "ontouchstart" in window || navigator.maxTouchPoints > 0;
+    let scrollLeft = 0;
 
     const onMouseDown = (e) => {
-      if (e.button !== 0) return;
       isDown = true;
-      hasScrolled = false;
-      startX = e.clientX;
-      startScrollLeft = el.scrollLeft;
-      startTime = Date.now();
       el.classList.add("dragging");
+      startX = e.pageX - el.offsetLeft;
+      scrollLeft = el.scrollLeft;
       e.preventDefault();
-    };
-
-    const onMouseMove = (e) => {
-      if (!isDown) return;
-      const x = e.clientX;
-      const deltaX = Math.abs(x - startX);
-      if (deltaX > SCROLL_THRESHOLD) {
-        hasScrolled = true;
-        const walk = startX - x;
-        // Chrome optimization: use requestAnimationFrame
-        requestAnimationFrame(() => {
-          el.scrollLeft = startScrollLeft + walk;
-        });
-        el.setAttribute("data-scrolling", "true");
-      }
-    };
-
-    const onMouseUp = (e) => {
-      const endTime = Date.now();
-      const duration = endTime - startTime;
-      isDown = false;
-      el.classList.remove("dragging");
-      if (hasScrolled || duration > TIME_THRESHOLD) {
-        e.preventDefault();
-        e.stopPropagation();
-        setTimeout(() => {
-          el.removeAttribute("data-scrolling");
-          hasScrolled = false;
-        }, 100);
-      } else {
-        el.removeAttribute("data-scrolling");
-      }
     };
 
     const onMouseLeave = () => {
       isDown = false;
       el.classList.remove("dragging");
-      el.removeAttribute("data-scrolling");
     };
 
-    el.addEventListener("touchstart", onTouchStart, { passive: false });
-    el.addEventListener("touchmove", onTouchMove, { passive: false });
-    el.addEventListener("touchend", onTouchEnd, { passive: false });
-
-    if (!isTouchDevice) {
-      el.addEventListener("mousedown", onMouseDown, { passive: false });
-      el.addEventListener("mousemove", onMouseMove, { passive: false });
-      el.addEventListener("mouseup", onMouseUp, { passive: false });
-      el.addEventListener("mouseleave", onMouseLeave, { passive: true });
-    }
-
-    const preventImgDrag = (e) => e.preventDefault();
-    const preventSelect = (e) => {
-      if (isDown && hasScrolled) e.preventDefault();
+    const onMouseUp = () => {
+      isDown = false;
+      el.classList.remove("dragging");
     };
 
-    el.querySelectorAll("img").forEach((img) => {
-      img.addEventListener("dragstart", preventImgDrag);
-    });
-    el.addEventListener("selectstart", preventSelect);
+    const onMouseMove = (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - el.offsetLeft;
+      const walk = (x - startX) * 2; // Velocità dello scroll
+      el.scrollLeft = scrollLeft - walk;
+    };
+
+    // Aggiungi eventi solo per desktop
+    el.addEventListener("mousedown", onMouseDown);
+    el.addEventListener("mouseleave", onMouseLeave);
+    el.addEventListener("mouseup", onMouseUp);
+    el.addEventListener("mousemove", onMouseMove);
 
     return () => {
-      el.removeEventListener("touchstart", onTouchStart);
-      el.removeEventListener("touchmove", onTouchMove);
-      el.removeEventListener("touchend", onTouchEnd);
-
-      if (!isTouchDevice) {
-        el.removeEventListener("mousedown", onMouseDown);
-        el.removeEventListener("mousemove", onMouseMove);
-        el.removeEventListener("mouseup", onMouseUp);
-        el.removeEventListener("mouseleave", onMouseLeave);
-      }
-
-      el.querySelectorAll("img").forEach((img) => {
-        img.removeEventListener("dragstart", preventImgDrag);
-      });
-      el.removeEventListener("selectstart", preventSelect);
+      el.removeEventListener("mousedown", onMouseDown);
+      el.removeEventListener("mouseleave", onMouseLeave);
+      el.removeEventListener("mouseup", onMouseUp);
+      el.removeEventListener("mousemove", onMouseMove);
     };
   }, []);
 
@@ -331,7 +222,7 @@ const Proposte = () => {
       id: 5,
       staticMedia: "/gif/10-stopped.jpg",
       animatedMedia: "/gif/10.mp4",
-      title: "Tornare",  //WORK IN PROGRESS
+      title: "Tornare", //WORK IN PROGRESS
       description:
         "Investimenti su rinnovabili ed efficienza energetica per ridurre costi e impatto ambientale. Comunità energetiche, solare sui tetti pubblici e sostegno alle famiglie per la transizione verde.",
     },
@@ -351,7 +242,8 @@ const Proposte = () => {
       staticMedia: "/gif/1-stopped.jpg",
       animatedMedia: "/gif/1.mp4",
       title: "Sociale",
-      description: "Il diritto alla casa è una questione sociale cruciale anche ad Aosta. Da una ricerca di Regione Valle d’Aosta emerge che quasi il 27% dei genitori soli con figli vive in affitto, spesso con canoni che assorbono fino al 30% del reddito delle persone sole, mentre oltre un quarto delle famiglie ha difficoltà a sostenere le spese abitative. Questa fragilità colpisce in particolare le persone più giovani, i lavoratori precari e le famiglie straniere, che abitano mediamente in case più piccole e con peggiori condizioni abitative. A fronte di questi dati, serve un impegno concreto per rendere Aosta una città più giusta e inclusiva. Secondo i dati Openpolis, i comuni italiani spendono mediamente appena 1,28 euro pro capite per il diritto all’abitare, con forti disuguaglianze territoriali. Anche Aosta deve fare di più. La città deve adottare un Piano comunale per l’abitare, con il censimento e il recupero delle case sfitte, l’attivazione di un fondo per l’emergenza abitativa, accordi di canone concordato e progetti di housing sociale e co-housing. L’obiettivo è duplice: garantire alloggi dignitosi e accessibili a chi oggi è più in difficoltà, e ridare vita ai quartieri attraverso politiche abitative che siano anche occasioni di rigenerazione urbana e coesione sociale.",
+      description:
+        "Il diritto alla casa è una questione sociale cruciale anche ad Aosta. Da una ricerca di Regione Valle d’Aosta emerge che quasi il 27% dei genitori soli con figli vive in affitto, spesso con canoni che assorbono fino al 30% del reddito delle persone sole, mentre oltre un quarto delle famiglie ha difficoltà a sostenere le spese abitative. Questa fragilità colpisce in particolare le persone più giovani, i lavoratori precari e le famiglie straniere, che abitano mediamente in case più piccole e con peggiori condizioni abitative. A fronte di questi dati, serve un impegno concreto per rendere Aosta una città più giusta e inclusiva. Secondo i dati Openpolis, i comuni italiani spendono mediamente appena 1,28 euro pro capite per il diritto all’abitare, con forti disuguaglianze territoriali. Anche Aosta deve fare di più. La città deve adottare un Piano comunale per l’abitare, con il censimento e il recupero delle case sfitte, l’attivazione di un fondo per l’emergenza abitativa, accordi di canone concordato e progetti di housing sociale e co-housing. L’obiettivo è duplice: garantire alloggi dignitosi e accessibili a chi oggi è più in difficoltà, e ridare vita ai quartieri attraverso politiche abitative che siano anche occasioni di rigenerazione urbana e coesione sociale.",
     },
     {
       id: 2,
@@ -467,7 +359,7 @@ const Proposte = () => {
       <div className="proposte-content">
         <section className="header-section">
           <h1>LE MIE PROPOSTE</h1>
-          <h2 className="subtitle">PER UNA VALLE D'AOSTA DIVERSA</h2>
+          <h2 className="subtitle">PER TUTTA UN'ALTRA VALLE</h2>
         </section>
 
         <section className="static-section">
@@ -482,21 +374,27 @@ const Proposte = () => {
             <div className="static-text">
               <h2 className="static-title">Il mio impegno per la Valle</h2>
               <p>
-                Mi impegno perché sogno una Valle d'Aosta in cui nessuno venga
-                lasciato indietro, dove le lotte per il lavoro, la salute,
-                l'ambiente e i diritti siano parte di un'unica visione di
-                futuro.
+                Sognare, lottare, restare. Sono tre parole semplici ma forti,
+                che raccontano la scelta di chi non si rassegna a una Valle
+                d’Aosta piegata da salari bassi, servizi pubblici indeboliti e
+                giovani costretti a partire.
               </p>
               <p>
-                Faccio politica perché credo che nessuno debba sentirsi
-                invisibile. Perché la Valle d'Aosta ha bisogno di chi non ha
-                paura di dire le cose come stanno.
+                In una regione dove il costo della vita cresce più che altrove,
+                dove affitti e bollette pesano sulle famiglie e troppi
+                lavoratori ricevono paghe che non garantiscono una vita
+                dignitosa, la politica deve avere il coraggio di cambiare
+                strada.{" "}
               </p>
-              <div className="quote-highlight">
-                "Sono una giovane valdostana di sinistra e voglio portare in
-                consiglio la voce di tutte le persone che non si sono mai
-                sentite rappresentate."
-              </div>
+              <p>
+                Il nostro programma, come Valle D'Aosta Aperta, nasce da questa
+                urgenza: mettere al centro le persone, i diritti, l’ambiente e
+                la giustizia sociale. Vogliamo una Valle d’Aosta che difenda la
+                sanità pubblica, che offra salari equi, che scelga la
+                transizione ecologica e non le speculazioni, che sia terra di
+                pace e solidarietà, capace di accogliere le diversità e di dare
+                futuro alle persone giovani.
+              </p>
             </div>
           </div>
         </section>

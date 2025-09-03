@@ -29,7 +29,10 @@ const Footer = () => {
         </div>
         <p className="copyright">
           &copy; {new Date().getFullYear()} Chiara Isabelle Berard. Tutti i
-          diritti riservati.
+          diritti riservati. Committente responsabile: Chiara Berard
+        </p>
+        <p className="data">
+          Nessun dato verrà raccolto su questo sito
         </p>
       </div>
     </footer>

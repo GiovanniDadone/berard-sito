@@ -18,6 +18,8 @@ const Banner = () => {
           Vota Valle d'Aosta Aperta, scrivi Berard!
         </span>
         <span>.......</span>
+        <span className="banner-text">Sondjé. Se battre. Reusté.</span>
+        <span>.......</span>
         <span className="banner-text">
           Per una Valle d'Aosta che non lascia indietro nessunə.
         </span>

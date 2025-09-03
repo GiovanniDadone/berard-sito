@@ -1,6 +1,5 @@
 .quote-box {
   background: var(--primary-purple);
-  padding: 2rem;
   border-radius: 8px;
   text-align: center;
   font-size: 1.3rem;
@@ -8,6 +7,7 @@
   line-height: 1.6;
   font-style: italic;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  padding-bottom: 4%;
 }
 
 @media (max-width: 768px) {

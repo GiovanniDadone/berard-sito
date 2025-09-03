@@ -13,6 +13,12 @@ const Home = () => {
       {/* Stats section immediatamente dopo */}
       <section className="stats-section">
         <h2 className="stats-title">Insieme per il cambiamento</h2>
+        <div className="stats-title">
+          <h3>
+            Testo di prova
+          </h3>
+          {/*DA METTERE QUI IL TESTO*/}
+        </div>
         <div className="stats-grid">
           <div className="stat-card stat-card--red" data-bg="political">
             <div className="stat-content">
@@ -33,6 +39,12 @@ const Home = () => {
             </div>
           </div>
         </div>
+        <img
+                src="/finto_santino.png"
+                className="santino"
+                loading="eager"
+                alt="Chiara Berard"
+              />
       </section>
     </main>
   );

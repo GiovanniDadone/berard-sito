@@ -22,49 +22,6 @@ const Contatti = () => {
         <section className="contacts-main">
           <div className="contact-card">
             <div className="contact-icon">
-              <img src="/facebook.png" alt="Facebook" />
-            </div>
-            <h3>Facebook</h3>
-            <p className="contact-text">
-              Seguimi per aggiornamenti e discussioni politiche
-            </p>
-            <a
-              href="https://facebook.com/profile.php?id=61569104398518"
-              className="contact-link"
-            >
-              facebook.com/chiaraberard
-            </a>
-          </div>
-          <div className="contact-card">
-            <div className="contact-icon">
-              <img src="/instagram.png" alt="Instagram" />
-            </div>
-            <h3>Instagram</h3>
-            <p className="contact-text">
-              Scopri il dietro le quinte della mia campagna
-            </p>
-            <a
-              href="https://instagram.com/adolescenzafumogeno"
-              className="contact-link"
-            >
-              @adolescenzafumogeno
-            </a>
-          </div>
-          <div className="contact-card">
-            <div className="contact-icon">
-              <img src="/tiktok.png" alt="TikTok" />
-            </div>
-            <h3>TikTok</h3>
-            <p className="contact-text">Contenuti dinamici e coinvolgenti</p>
-            <a
-              href="https://tiktok.com/@chiaraisabelle"
-              className="contact-link"
-            >
-              @chiaraisabelle
-            </a>
-          </div>
-          <div className="contact-card">
-            <div className="contact-icon">
               <img src="/whatsapp.png" alt="WhatsApp" />
             </div>
             <h3>WhatsApp</h3>
@@ -75,6 +32,7 @@ const Contatti = () => {
               +39 390 123 4567
             </a>
           </div>
+
           <div className="contact-card">
             <div className="contact-icon">
               <img src="/mail.png" alt="Email" />
@@ -92,14 +50,42 @@ const Contatti = () => {
               scrivimi@chiaraberard.it
             </a>
           </div>
+
+          <div className="contact-card">
+            <div className="contact-icon">
+              <img src="/instagram.png" alt="Instagram" />
+            </div>
+            <h3>Instagram</h3>
+            <p className="contact-text">
+              Scopri il dietro le quinte della mia campagna
+            </p>
+            <a
+              href="https://instagram.com/adolescenzafumogeno"
+              className="contact-link"
+            >
+              @adolescenzafumogeno
+            </a>
+          </div>
+          <div className="contact-card">
+            <div className="contact-icon">
+              <img src="/facebook.png" alt="Facebook" />
+            </div>
+            <h3>Facebook</h3>
+            <p className="contact-text">
+              Seguimi per aggiornamenti e discussioni politiche
+            </p>
+            <a
+              href="https://facebook.com/profile.php?id=61569104398518"
+              className="contact-link"
+            >
+              facebook.com/chiaraberard
+            </a>
+          </div>
         </section>
 
         <section>
           <div className="quote-box">
-            <p>
-              "La politica si fa insieme. Ogni voce conta, ogni messaggio è
-              importante"
-            </p>
+            <p>Come Aiutarmi</p>
           </div>
         </section>
       </div>
