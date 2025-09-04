@@ -226,6 +226,14 @@
     opacity: 0.8;
     filter: contrast(1.1) brightness(1.1) saturate(1.2);
   }
+
+  .santino {
+    margin-top: 5%;
+  width: 90%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  }
 }
 
 /* ===== MOBILE SMALL (480px-) ===== */
@@ -237,6 +245,14 @@
 
   .stat-card:active::before {
     opacity: 0.75;
+  }
+
+    .santino {
+    margin-top: 10%;
+  width: 90%;
+  height: auto;
+  object-fit: contain;
+  display: block;
   }
 }
 

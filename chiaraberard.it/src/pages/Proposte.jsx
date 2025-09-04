@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useSEO } from "../utils/seo";
+import { Helmet } from "@vuer-ai/react-helmet-async";
 import "./Proposte.css";
 
 function useDragScroll() {
@@ -307,6 +308,64 @@ const Proposte = () => {
     restoreScrollPosition();
   }, [restoreScrollPosition]);
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Proposte - Chiara Berard - Candidata Valle d'Aosta Aperta",
+    description:
+      "Sognare, lottare, restare. Chiara Berard candidata Valle d'Aosta Aperta per elezioni regionali 2025. Salario minimo, sanità pubblica, ambiente.",
+    url: "https://chiaraberard.it/proposte",
+    image: "https://chiaraberard.it/profile-image.png",
+    mainEntity: {
+      "@type": "Person",
+      name: "Chiara Berard",
+      jobTitle: "Candidata Consiglio Regionale Valle d'Aosta",
+      description:
+        "Candidata alle elezioni regionali 2025 per Valle d'Aosta Aperta. Attivista per i diritti LGBTQ+, co-fondatrice Aosta Pride.",
+      sameAs: [
+        "https://www.instagram.com/adolescenzafumogeno",
+        "https://facebook.com/profile.php?id=61569104398518",
+      ],
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Aosta",
+        addressRegion: "Valle d'Aosta",
+        addressCountry: "IT",
+      },
+      affiliation: {
+        "@type": "Organization",
+        name: "Valle d'Aosta Aperta",
+      },
+      knowsAbout: [
+        "Politiche sociali",
+        "Diritti LGBTQ+",
+        "Ambiente",
+        "Sanità pubblica",
+        "Salario minimo",
+      ],
+    },
+    about: [
+      {
+        "@type": "Thing",
+        name: "Salario minimo",
+        description:
+          "Introduzione di un salario minimo di 12 euro l'ora in Valle d'Aosta.",
+      },
+      {
+        "@type": "Thing",
+        name: "Sanità pubblica",
+        description:
+          "Miglioramento della sanità pubblica in Valle d'Aosta attraverso investimenti e assunzione di personale.",
+      },
+      {
+        "@type": "Thing",
+        name: "Ambiente",
+        description:
+          "Promozione di politiche ambientali sostenibili in Valle d'Aosta.",
+      },
+    ],
+  };
+
   const CarouselSection = ({ data, title, scrollX = false }) => {
     const scrollRef = useDragScroll();
 
@@ -360,69 +419,22 @@ const Proposte = () => {
   };
 
   useSEO({
-    title: "Proposte Programmatiche - Chiara Berard Valle d'Aosta Aperta",
-    description: "Il programma completo di Chiara Berard per le elezioni regionali 2025: salario minimo 12€/h, sanità pubblica rafforzata, transizione ecologica, diritti civili e giustizia sociale per la Valle d'Aosta.",
-    canonical: "https://chiaraberard.it/proposte",
-    ogImage: "https://chiaraberard.it/proposte-og.jpg",
-    keywords: "programma elettorale, Chiara Berard, Valle d'Aosta 2025, salario minimo, sanità pubblica, ambiente, diritti LGBTQ+, Palestina, accessibilità",
-    ogType: "article",
-    publishedTime: "2024-12-01T10:00:00Z",
-    modifiedTime: new Date().toISOString()
+    title:
+      "Chiara Berard - Candidata Valle d'Aosta Aperta | Elezioni Regionali 2025",
+    description:
+      "Sognare, lottare, restare. Chiara Berard candidata Valle d'Aosta Aperta per elezioni regionali 2025. Salario minimo, sanità pubblica, ambiente.",
+    canonical: "https://chiaraberard.it/",
+    ogImage: "https://chiaraberard.it/profile-image.png",
+    keywords:
+      "Chiara Berard, Valle d'Aosta, elezioni regionali, politica, salario minimo",
   });
-
-  // Dati strutturati per il programma elettorale
-  useStructuredData([
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Proposte Programmatiche Valle d'Aosta Aperta 2025",
-      "author": {
-        "@type": "Person",
-        "name": "Chiara Berard"
-      },
-      "datePublished": "2024-12-01T10:00:00Z",
-      "dateModified": new Date().toISOString(),
-      "description": "Programma completo per le elezioni regionali: salario minimo, sanità, ambiente e diritti",
-      "image": "https://chiaraberard.it/proposte-og.jpg",
-      "publisher": {
-        "@type": "Organization", 
-        "name": "Valle d'Aosta Aperta"
-      }
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "name": "Proposte Programmatiche Regionali",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Salario Minimo 12€/h",
-          "description": "Introduzione salario minimo regionale 12 euro l'ora"
-        },
-        {
-          "@type": "ListItem", 
-          "position": 2,
-          "name": "Sanità Pubblica",
-          "description": "Rafforzamento servizi sanitari e supporto psicologico"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3, 
-          "name": "Ambiente e Clima",
-          "description": "Legge regionale cambiamento climatico e neutralità 2040"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "Diritti Civili",
-          "description": "Educazione sessuo-affettiva e sostegno comunità LGBTQ+"
-        }
-      ]
-    }
-  ]);
   return (
     <div className="proposte-container">
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
+      </Helmet>
       <div className="proposte-content">
         <section className="header-section">
           <h1>LE MIE PROPOSTE</h1>

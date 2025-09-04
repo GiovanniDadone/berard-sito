@@ -1,53 +1,100 @@
 // Contatti.jsx
-import { useSEO, useStructuredData } from "../utils/seo";
+import { Helmet } from "@vuer-ai/react-helmet-async";
 import "./Contatti.css";
 
 const Contatti = () => {
   // SEO per la pagina contatti
-  useSEO({
-    title: "Contatti - Chiara Berard Valle d'Aosta Aperta | Scrivi e Partecipa",
-    description: "Contatta Chiara Berard per domande, collaborazioni e partecipazione alla campagna elettorale 2025. WhatsApp, email, Instagram e Facebook.",
-    canonical: "https://chiaraberard.it/contatti",
-    ogImage: "https://chiaraberard.it/contatti-og.jpg",
-    keywords: "contatti Chiara Berard, WhatsApp, email, Instagram, Facebook, campagna elettorale, Valle d'Aosta",
-    ogType: "website"
-  });
 
   // Dati strutturati per i contatti
-  useStructuredData({
+  const structuredData = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
-    "mainEntity": {
+    mainEntity: {
       "@type": "Person",
-      "name": "Chiara Berard",
-      "contactPoint": [
+      name: "Chiara Berard",
+      contactPoint: [
         {
           "@type": "ContactPoint",
-          "telephone": "+39-390-123-4567",
-          "contactType": "customer service",
-          "availableLanguage": ["Italian", "French"]
+          telephone: "+39-390-123-4567",
+          contactType: "customer service",
+          availableLanguage: ["Italian", "French"],
         },
         {
-          "@type": "ContactPoint", 
-          "email": "scrivimi@chiaraberard.it",
-          "contactType": "customer service"
-        }
+          "@type": "ContactPoint",
+          email: "scrivimi@chiaraberard.it",
+          contactType: "customer service",
+        },
       ],
-      "sameAs": [
+      sameAs: [
         "https://instagram.com/adolescenzafumogeno",
         "https://facebook.com/profile.php?id=61569104398518",
-        "https://wa.me/393901234567"
-      ]
+        "https://wa.me/393901234567",
+      ],
     },
-    "about": {
+    about: {
       "@type": "Thing",
-      "name": "Campagna Elettorale Valle d'Aosta 2025",
-      "description": "Contatti per partecipazione, collaborazioni e informazioni sulla campagna elettorale"
-    }
-  });
+      name: "Campagna Elettorale Valle d'Aosta 2025",
+      description:
+        "Contatti per partecipazione, collaborazioni e informazioni sulla campagna elettorale",
+    },
+  };
 
   return (
     <div className="contacts-container">
+      <Helmet>
+        {/* Titolo e descrizione */}
+        <title>
+          Chiara Berard - Candidata Valle d'Aosta Aperta | Elezioni Regionali
+          2025
+        </title>
+        <meta
+          name="description"
+          content="Sognare, lottare, restare. Chiara Berard candidata Valle d'Aosta Aperta per elezioni regionali 2025. Salario minimo, sanità pubblica, ambiente."
+        />
+        <meta
+          name="keywords"
+          content="Chiara Berard, Valle d'Aosta, elezioni regionali 2025, politica, salario minimo, sanità pubblica, ambiente, diritti"
+        />
+        <link rel="canonical" href="https://chiaraberard.it/proposte" />
+
+        {/* Open Graph (Facebook / LinkedIn / WhatsApp) */}
+        <meta
+          property="og:title"
+          content="Chiara Berard - Candidata Valle d'Aosta Aperta | Elezioni Regionali 2025"
+        />
+        <meta
+          property="og:description"
+          content="Le proposte di Chiara Berard per la Valle d'Aosta: salario minimo, sanità pubblica, ambiente, diritti e molto altro."
+        />
+        <meta property="og:url" content="https://chiaraberard.it/proposte" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content="https://chiaraberard.it/profile-image.png"
+        />
+        <meta property="og:locale" content="it_IT" />
+
+        {/* Twitter Cards */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Chiara Berard - Candidata Valle d'Aosta Aperta"
+        />
+        <meta
+          name="twitter:description"
+          content="Scopri le proposte di Chiara Berard per una Valle più giusta, ecologica e solidale."
+        />
+        <meta
+          name="twitter:image"
+          content="https://chiaraberard.it/profile-image.png"
+        />
+        <meta name="twitter:creator" content="@adolescenzafumogeno" />
+
+        {/* JSON-LD Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
+      </Helmet>
       <div className="contacts-content">
         <section className="intro-section">
           <h1 className="contact-title">CONTATTAMI</h1>

@@ -8,33 +8,33 @@ const Home = () => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Chiara Berard",
-    "jobTitle": "Candidata Consiglio Regionale Valle d'Aosta",
-    "description":
+    name: "Chiara Berard",
+    jobTitle: "Candidata Consiglio Regionale Valle d'Aosta",
+    description:
       "Candidata alle elezioni regionali 2025 per Valle d'Aosta Aperta. Attivista per i diritti LGBTQ+, co-fondatrice Aosta Pride.",
-    "url": "https://chiaraberard.it",
-    "image": "https://chiaraberard.it/profile-image.png",
-    "sameAs": [
+    url: "https://chiaraberard.it",
+    image: "https://chiaraberard.it/profile-image.png",
+    sameAs: [
       "https://www.instagram.com/adolescenzafumogeno",
-      "https://facebook.com/profile.php?id=61569104398518"
+      "https://facebook.com/profile.php?id=61569104398518",
     ],
-    "address": {
+    address: {
       "@type": "PostalAddress",
-      "addressLocality": "Aosta",
-      "addressRegion": "Valle d'Aosta",
-      "addressCountry": "IT"
+      addressLocality: "Aosta",
+      addressRegion: "Valle d'Aosta",
+      addressCountry: "IT",
     },
-    "affiliation": {
+    affiliation: {
       "@type": "Organization",
-      "name": "Valle d'Aosta Aperta"
+      name: "Valle d'Aosta Aperta",
     },
-    "knowsAbout": [
+    knowsAbout: [
       "Politiche sociali",
       "Diritti LGBTQ+",
       "Ambiente",
       "Sanità pubblica",
-      "Salario minimo"
-    ]
+      "Salario minimo",
+    ],
   };
 
   return (
@@ -49,12 +49,18 @@ const Home = () => {
           content="Sognare, lottare, restare. Chiara Berard candidata Valle d'Aosta Aperta per elezioni regionali 2025. Salario minimo, sanità pubblica, ambiente, diritti LGBTQ+."
         />
         <link rel="canonical" href="https://chiaraberard.it/" />
-        <meta property="og:title" content="Chiara Berard - Valle d'Aosta Aperta" />
+        <meta
+          property="og:title"
+          content="Chiara Berard - Valle d'Aosta Aperta"
+        />
         <meta
           property="og:description"
           content="Sognare, lottare, restare. Chiara Berard candidata Valle d'Aosta Aperta per elezioni regionali 2025."
         />
-        <meta property="og:image" content="https://chiaraberard.it/profile-image.png" />
+        <meta
+          property="og:image"
+          content="https://chiaraberard.it/profile-image.png"
+        />
         <meta property="og:type" content="website" />
         <meta
           name="keywords"
