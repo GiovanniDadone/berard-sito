@@ -12,6 +12,11 @@ const Navbar = () => {
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
+
+  // Funzione per aprire Gmail
+  const handleEmailClick = () => {
+    window.open('https://mail.google.com/mail/?view=cm&fs=1&to=scrivimi@chiaraberard.it', '_blank');
+  };
   
   return (
     <header className="header bg-teal-85 sticky-top">
@@ -30,7 +35,7 @@ const Navbar = () => {
             <li><Link to="/chi-sono" className="nav-link">Chi sono</Link></li>
             <li><Link to="/proposte" className="nav-link">Le mie proposte</Link></li>
             <li><Link to="/contatti" className="nav-link">Contatti</Link></li>
-            <button className="button-link">Scrivimi</button>
+            <button className="button-link" onClick={handleEmailClick}>Scrivimi</button>
           </ul>
         </nav>
 
@@ -51,7 +56,17 @@ const Navbar = () => {
             <li><Link to="/chi-sono" className="mobile-nav-link" onClick={closeMenu}>Chi sono</Link></li>
             <li><Link to="/proposte" className="mobile-nav-link" onClick={closeMenu}>Le mie proposte</Link></li>
             <li><Link to="/contatti" className="mobile-nav-link" onClick={closeMenu}>Contatti</Link></li>
-            <li><button className="mobile-button-link" onClick={closeMenu}>Scrivimi</button></li>
+            <li>
+              <button 
+                className="mobile-button-link" 
+                onClick={() => {
+                  handleEmailClick();
+                  closeMenu();
+                }}
+              >
+                Scrivimi
+              </button>
+            </li>
           </ul>
         </nav>
       </div>

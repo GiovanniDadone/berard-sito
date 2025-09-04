@@ -1,5 +1,6 @@
 import Footer from "../Footer";
 import Navbar from "../Navbar";
+import FloatingButton from "../FloatingButton"; 
 import "./Layout.css";
 
 const Layout = ({ children }) => {
@@ -8,6 +9,7 @@ const Layout = ({ children }) => {
       <Navbar />
       <main className="layout-main">{children}</main>
       <Footer />
+      <FloatingButton /> 
     </div>
   );
 };

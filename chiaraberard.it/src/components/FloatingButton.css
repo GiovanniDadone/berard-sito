@@ -1,0 +1,47 @@
+.floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  height: 80px;            
+  min-width: 80px;         
+  background: var(--primary-red);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;               
+  color: var(--primary-light);
+  font-size: 16px;         
+  font-family: "Mattone", sans-serif;
+  overflow: hidden;
+  padding: 0 15px;         
+  z-index: 33;
+}
+
+
+
+.floating-button-icon {
+  margin: 12px;
+  width: 48px;             
+  height: 48px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .floating-button {
+    height: 65px;
+    min-width: 65px;
+    font-size: 14px;
+    gap: 6px;
+    bottom: 15px;
+    right: 15px;
+    padding: 0 10px;
+  }
+
+  .floating-button-icon {
+    width: 36px;
+    height: 36px;
+    margin: 8px;
+  }
+}
