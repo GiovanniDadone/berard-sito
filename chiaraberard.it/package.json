@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@fontsource/press-start-2p": "^5.2.6",
+    "@vuer-ai/react-helmet-async": "^2.0.7",
     "framer-motion": "^12.23.12",
     "gsap": "^3.13.0",
     "react": "^19.1.0",

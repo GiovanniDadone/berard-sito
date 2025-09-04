@@ -1,25 +1,58 @@
 // Contatti.jsx
-import { useSEO } from "../utils/seo";
+import { useSEO, useStructuredData } from "../utils/seo";
 import "./Contatti.css";
 
 const Contatti = () => {
+  // SEO per la pagina contatti
   useSEO({
-    title:
-      "Chiara Berard - Candidata Valle d'Aosta Aperta | Elezioni Regionali 2025",
-    description:
-      "Sognare, lottare, restare. Chiara Berard candidata Valle d'Aosta Aperta per elezioni regionali 2025. Salario minimo, sanità pubblica, ambiente.",
-    canonical: "https://chiaraberard.it/",
-    ogImage: "https://chiaraberard.it/profile-image.png",
-    keywords:
-      "Chiara Berard, Valle d'Aosta, elezioni regionali, politica, salario minimo",
+    title: "Contatti - Chiara Berard Valle d'Aosta Aperta | Scrivi e Partecipa",
+    description: "Contatta Chiara Berard per domande, collaborazioni e partecipazione alla campagna elettorale 2025. WhatsApp, email, Instagram e Facebook.",
+    canonical: "https://chiaraberard.it/contatti",
+    ogImage: "https://chiaraberard.it/contatti-og.jpg",
+    keywords: "contatti Chiara Berard, WhatsApp, email, Instagram, Facebook, campagna elettorale, Valle d'Aosta",
+    ogType: "website"
   });
+
+  // Dati strutturati per i contatti
+  useStructuredData({
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Chiara Berard",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+39-390-123-4567",
+          "contactType": "customer service",
+          "availableLanguage": ["Italian", "French"]
+        },
+        {
+          "@type": "ContactPoint", 
+          "email": "scrivimi@chiaraberard.it",
+          "contactType": "customer service"
+        }
+      ],
+      "sameAs": [
+        "https://instagram.com/adolescenzafumogeno",
+        "https://facebook.com/profile.php?id=61569104398518",
+        "https://wa.me/393901234567"
+      ]
+    },
+    "about": {
+      "@type": "Thing",
+      "name": "Campagna Elettorale Valle d'Aosta 2025",
+      "description": "Contatti per partecipazione, collaborazioni e informazioni sulla campagna elettorale"
+    }
+  });
+
   return (
     <div className="contacts-container">
       <div className="contacts-content">
         <section className="intro-section">
           <h1 className="contact-title">CONTATTAMI</h1>
           <h4 className="contact-intro-text">
-            Resta aggiornatə, partecipa, costruisci con noi. La mia campagna
+            Resta aggiornato, partecipa, costruisci con noi. La mia campagna
             vive anche grazie a chi vuole esserci, informarsi e dare una mano.
             Iscriviti alla newsletter per ricevere aggiornamenti, materiali da
             condividere, appuntamenti sul territorio e contenuti esclusivi.

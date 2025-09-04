@@ -360,15 +360,67 @@ const Proposte = () => {
   };
 
   useSEO({
-    title:
-      "Chiara Berard - Candidata Valle d'Aosta Aperta | Elezioni Regionali 2025",
-    description:
-      "Sognare, lottare, restare. Chiara Berard candidata Valle d'Aosta Aperta per elezioni regionali 2025. Salario minimo, sanità pubblica, ambiente.",
-    canonical: "https://chiaraberard.it/",
-    ogImage: "https://chiaraberard.it/profile-image.png",
-    keywords:
-      "Chiara Berard, Valle d'Aosta, elezioni regionali, politica, salario minimo",
+    title: "Proposte Programmatiche - Chiara Berard Valle d'Aosta Aperta",
+    description: "Il programma completo di Chiara Berard per le elezioni regionali 2025: salario minimo 12€/h, sanità pubblica rafforzata, transizione ecologica, diritti civili e giustizia sociale per la Valle d'Aosta.",
+    canonical: "https://chiaraberard.it/proposte",
+    ogImage: "https://chiaraberard.it/proposte-og.jpg",
+    keywords: "programma elettorale, Chiara Berard, Valle d'Aosta 2025, salario minimo, sanità pubblica, ambiente, diritti LGBTQ+, Palestina, accessibilità",
+    ogType: "article",
+    publishedTime: "2024-12-01T10:00:00Z",
+    modifiedTime: new Date().toISOString()
   });
+
+  // Dati strutturati per il programma elettorale
+  useStructuredData([
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Proposte Programmatiche Valle d'Aosta Aperta 2025",
+      "author": {
+        "@type": "Person",
+        "name": "Chiara Berard"
+      },
+      "datePublished": "2024-12-01T10:00:00Z",
+      "dateModified": new Date().toISOString(),
+      "description": "Programma completo per le elezioni regionali: salario minimo, sanità, ambiente e diritti",
+      "image": "https://chiaraberard.it/proposte-og.jpg",
+      "publisher": {
+        "@type": "Organization", 
+        "name": "Valle d'Aosta Aperta"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Proposte Programmatiche Regionali",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Salario Minimo 12€/h",
+          "description": "Introduzione salario minimo regionale 12 euro l'ora"
+        },
+        {
+          "@type": "ListItem", 
+          "position": 2,
+          "name": "Sanità Pubblica",
+          "description": "Rafforzamento servizi sanitari e supporto psicologico"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3, 
+          "name": "Ambiente e Clima",
+          "description": "Legge regionale cambiamento climatico e neutralità 2040"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Diritti Civili",
+          "description": "Educazione sessuo-affettiva e sostegno comunità LGBTQ+"
+        }
+      ]
+    }
+  ]);
   return (
     <div className="proposte-container">
       <div className="proposte-content">
