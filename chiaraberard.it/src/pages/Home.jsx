@@ -1,7 +1,7 @@
 // src/pages/Home.jsx
+import { Helmet } from "@vuer-ai/react-helmet-async";
 import Banner from "../components/Banner";
 import HeroSection from "../components/HeroSection";
-import { Helmet } from "@vuer-ai/react-helmet-async";
 import "./Home.css";
 
 const Home = () => {

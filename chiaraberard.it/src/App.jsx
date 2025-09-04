@@ -1,13 +1,12 @@
 // src/App.jsx
-import React from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-import { HelmetProvider } from '@vuer-ai/react-helmet-async';
-import Layout from './components/layout/Layout';
-import ChiSono from './pages/ChiSono';
-import Proposte from './pages/Proposte';
-import Contatti from './pages/Contatti';
-import Home from './pages/Home';
-import './Global.css';
+import { HelmetProvider } from "@vuer-ai/react-helmet-async";
+import { Route, HashRouter as Router, Routes } from "react-router-dom";
+import Layout from "./components/layout/Layout";
+import "./Global.css";
+import ChiSono from "./pages/ChiSono";
+import Contatti from "./pages/Contatti";
+import Home from "./pages/Home";
+import Proposte from "./pages/Proposte";
 // Importa le altre pagine qui...
 
 function App() {

@@ -1,6 +1,6 @@
+import { Helmet } from "@vuer-ai/react-helmet-async";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useSEO } from "../utils/seo";
-import { Helmet } from "@vuer-ai/react-helmet-async";
 import "./Proposte.css";
 
 function useDragScroll() {
