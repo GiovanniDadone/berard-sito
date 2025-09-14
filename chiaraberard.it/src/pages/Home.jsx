@@ -77,7 +77,20 @@ const Home = () => {
       <section className="stats-section">
         <h2 className="stats-title">Insieme per il cambiamento</h2>
         <div className="stats-title">
-          <h3>Testo di prova</h3>
+          <h3>
+            Quando ero una bambina avevo un pensiero costante: "O cambio le cose
+            o me ne andrò da qui".
+          </h3>
+          <h3>
+            {" "}
+            Oggi mi candido perché sogno tutta un’altra Valle, insieme a chi
+            ogni giorno fatica, resiste e lotta per restare. Voglio una Regione
+            che non costringa a scappare, dove il lavoro valga almeno 12 euro
+            l’ora, dove sanità pubblica, diritto alla casa, ambiente e diritti
+            civili siano garantiti davvero, non lasciati indietro. Una Valle
+            d’Aosta più giusta, più coraggiosa, più viva.
+          </h3>{" "}
+          <h3> IL 28 SETTEMBRE, VOTA VALLE D'AOSTA APERTA E SCRIVI BERARD</h3>
           {/* DA METTERE QUI IL TESTO */}
         </div>
         <div className="stats-grid">

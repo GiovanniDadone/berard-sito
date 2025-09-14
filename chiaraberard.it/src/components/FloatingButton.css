@@ -1,47 +1,117 @@
+:root {
+  --primary-red: #fe0b0b;
+  --primary-dark: #181114;
+  --primary-light: #fdfffc;
+}
+
+@keyframes iconBounce {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.2) rotate(-5deg); }
+  50% { transform: scale(1.4) rotate(0deg); }
+  75% { transform: scale(1.2) rotate(5deg); }
+}
+
+@keyframes iconShake {
+  0%, 100% { transform: translateX(0) rotate(0deg); }
+  10% { transform: translateX(-2px) rotate(-2deg); }
+  20% { transform: translateX(2px) rotate(2deg); }
+  30% { transform: translateX(-2px) rotate(-1deg); }
+  40% { transform: translateX(2px) rotate(1deg); }
+  50% { transform: translateX(-1px) rotate(-1deg); }
+  60% { transform: translateX(1px) rotate(1deg); }
+  70% { transform: translateX(-1px) rotate(0deg); }
+  80% { transform: translateX(1px) rotate(0deg); }
+  90% { transform: translateX(0) rotate(0deg); }
+}
+
 .floating-button {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  height: 80px;            
-  min-width: 80px;         
+  height: 70px;
+  min-width: 200px;
+  width: auto;
   background: var(--primary-red);
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;               
+  justify-content: flex-start;
+  gap: 12px;
   color: var(--primary-light);
-  font-size: 16px;         
+  font-size: 16px;
   font-family: "Mattone", sans-serif;
-  overflow: hidden;
-  padding: 0 15px;         
-  z-index: 33;
+  font-weight: 600;
+  padding: 0 20px;
+  z-index: 1000;
+  border-radius: 35px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-
+.floating-button:hover {
+  background: var(--primary-dark);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
 
 .floating-button-icon {
-  margin: 12px;
-  width: 48px;             
-  height: 48px;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.floating-button.hovered .floating-button-icon {
+  animation: iconBounce 0.8s ease-in-out, iconShake 0.6s ease-in-out 0.2s;
+}
+
+.floating-button-text {
+  white-space: nowrap;
+  font-weight: 600;
+  color: var(--primary-light);
+  font-size: 16px;
+  display: block;
+  opacity: 1;
 }
 
 /* Responsivo */
 @media (max-width: 768px) {
   .floating-button {
-    height: 65px;
-    min-width: 65px;
+    height: 60px;
+    min-width: 160px;
     font-size: 14px;
-    gap: 6px;
+    gap: 8px;
     bottom: 15px;
     right: 15px;
-    padding: 0 10px;
+    padding: 0 15px;
   }
 
   .floating-button-icon {
-    width: 36px;
-    height: 36px;
-    margin: 8px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .floating-button-text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-button {
+    height: 55px;
+    min-width: 140px;
+    font-size: 12px;
+    gap: 6px;
+    padding: 0 12px;
+  }
+
+  .floating-button-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .floating-button-text {
+    font-size: 12px;
   }
 }

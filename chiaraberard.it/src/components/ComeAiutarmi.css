@@ -1,0 +1,570 @@
+/* ComeAiutarmi.css - Design completamente allineato con ChiSono */
+
+/* Font Faces - Coerenza con il resto del sito */
+@font-face {
+  font-family: "Apfel";
+  src: url("/fonts/ApfelGrotezk-Regular.woff2") format("woff2"),
+    url("/fonts/ApfelGrotezk-Regular.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mattone";
+  src: url("/fonts/Mattone-Regular.woff2") format("woff2"),
+    url("/fonts/Mattone-Regular.woff") format("woff");
+  font-display: swap;
+}
+
+/* Animations */
+@keyframes colorPulse {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes cardFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes iconBounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Container principale */
+.come-aiutarmi-container {
+  background-color: var(--primary-purple);
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.come-aiutarmi-container::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 300px;
+  height: 300px;
+  background: rgba(34, 191, 172, 0.1);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.come-aiutarmi-container::after {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: rgba(237, 27, 47, 0.1);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.come-aiutarmi-inner {
+  max-width: 1200px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  align-items: center;
+}
+
+/* Titolo principale */
+.come-aiutarmi-title {
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--primary-red);
+  font-family: "Mattone", sans-serif;
+  margin: 0 auto 2rem auto; /* forza centratura */
+  background-color: var(--primary-light);
+  border-radius: 24px;
+  margin-bottom: 2rem;
+  padding-right: 4%;
+  font-weight: 700;
+  position: relative;
+}
+
+.come-aiutarmi-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-red), var(--primary-teal));
+  border-radius: 2px;
+}
+
+/* Sottotitolo */
+.come-aiutarmi-subtitle {
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.come-aiutarmi-subtitle p {
+  color: rgba(253, 255, 252, 0.9);
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  line-height: 1.6;
+  font-family: "Apfel", sans-serif;
+  font-weight: 400;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Grid delle card */
+.come-aiutarmi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+/* Card individuali */
+.come-aiutarmi-card {
+  background: rgba(253, 255, 252, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid rgba(253, 255, 252, 0.1);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transform-origin: center;
+}
+
+/* Effetto shimmer */
+.come-aiutarmi-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(253, 255, 252, 0.2),
+    transparent
+  );
+  transition: left 0.8s ease;
+  z-index: 1;
+}
+
+.come-aiutarmi-card:hover::before {
+  left: 100%;
+}
+
+/* Hover effects per ogni card */
+.come-aiutarmi-card:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  background: rgba(253, 255, 252, 0.2);
+}
+
+.come-aiutarmi-card.card-1:hover {
+  border-color: var(--primary-teal);
+  animation: cardFloat 3s ease-in-out infinite;
+}
+
+.come-aiutarmi-card.card-2:hover {
+  border-color: var(--primary-red);
+  animation: cardFloat 3s ease-in-out infinite 0.5s;
+}
+
+.come-aiutarmi-card.card-3:hover {
+  border-color: var(--primary-teal);
+  animation: cardFloat 3s ease-in-out infinite 1s;
+}
+
+/* Icone delle card */
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 3;
+}
+
+.come-aiutarmi-card:hover .card-icon {
+  animation: iconBounce 1s ease-in-out;
+  transform: scale(1.2);
+}
+
+/* Titoli delle card */
+.come-aiutarmi-card h3 {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  margin-bottom: 1.5rem;
+  color: var(--primary-light);
+  font-weight: 700;
+  font-family: "Mattone", sans-serif;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+}
+
+/* Descrizioni delle card */
+.come-aiutarmi-card p {
+  color: rgba(253, 255, 252, 0.95);
+  line-height: 1.7;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  font-family: "Apfel", sans-serif;
+  position: relative;
+  z-index: 2;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+/* Azione della card */
+.card-action {
+  position: relative;
+  z-index: 3;
+  margin-top: auto;
+}
+
+.card-action span {
+  color: var(--primary-light);
+  font-family: "Mattone", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: rgba(253, 255, 252, 0.1);
+  border-radius: 25px;
+  border: 1px solid rgba(253, 255, 252, 0.2);
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+/* Hover (desktop) */
+.come-aiutarmi-card:hover .card-action span {
+  opacity: 1;
+  transform: translateY(0);
+  background: rgba(253, 255, 252, 0.2);
+  border-color: rgba(253, 255, 252, 0.4);
+}
+
+/* Call to Action finale */
+.come-aiutarmi-cta {
+  background: var(--primary-dark);
+  color: var(--primary-light);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+.come-aiutarmi-cta::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: rgba(34, 191, 172, 0.1);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.come-aiutarmi-cta h3 {
+  font-family: "Mattone", sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--primary-light);
+  position: relative;
+  z-index: 2;
+}
+
+.come-aiutarmi-cta p {
+  font-family: "Apfel", sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  color: rgba(253, 255, 252, 0.9);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Hashtags nella CTA */
+.cta-hashtags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.cta-hashtags .hashtag {
+  padding: 0.75rem 1.5rem;
+  color: var(--primary-light);
+  border-radius: 25px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  border: none;
+  font-family: "Apfel", sans-serif;
+  cursor: pointer;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+.cta-hashtags .hashtag:nth-child(1) {
+  background: var(--primary-red);
+}
+
+.cta-hashtags .hashtag:nth-child(2) {
+  background: var(--primary-teal);
+}
+
+.cta-hashtags .hashtag:nth-child(3) {
+  background: var(--primary-red);
+}
+
+.cta-hashtags .hashtag:nth-child(4) {
+  background: var(--primary-purple);
+}
+
+.cta-hashtags .hashtag:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+  .come-aiutarmi-grid {
+    gap: 2rem;
+  }
+
+  .come-aiutarmi-card {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .come-aiutarmi-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 600px;
+    margin: 0 auto 4rem auto;
+  }
+
+  .come-aiutarmi-card {
+    padding: 2rem;
+  }
+
+  .come-aiutarmi-container {
+    padding: 3rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .come-aiutarmi-container {
+    padding: 2rem 1rem;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+  }
+
+  .come-aiutarmi-inner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .come-aiutarmi-title {
+    text-align: center;
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .come-aiutarmi-subtitle {
+    margin-bottom: 3rem;
+    text-align: center;
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .come-aiutarmi-grid {
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    width: 100%;
+    max-width: none;
+    padding: 0 0.5rem;
+  }
+
+  .come-aiutarmi-card {
+    padding: 1.5rem;
+    border-radius: 16px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .card-action span {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+    text-align: center;
+  }
+
+  .come-aiutarmi-cta {
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .cta-hashtags {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .come-aiutarmi-container {
+    padding: 1.5rem 1rem;
+    text-align: center;
+    align-items: center;
+  }
+
+  .come-aiutarmi-inner {
+    width: 100%;
+    padding: 0;
+  }
+
+  .dots-container {
+    margin-bottom: 2rem;
+    justify-content: center;
+  }
+
+  .come-aiutarmi-title {
+    text-align: center;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .come-aiutarmi-subtitle {
+    margin-bottom: 2rem;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .come-aiutarmi-grid {
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 0;
+    width: 100%;
+  }
+
+  .come-aiutarmi-card {
+    padding: 1rem;
+    border-radius: 12px;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .card-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  .come-aiutarmi-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .come-aiutarmi-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .come-aiutarmi-cta {
+    padding: 1.5rem;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+  }
+
+  .come-aiutarmi-cta h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .come-aiutarmi-cta p {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .cta-hashtags {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .cta-hashtags .hashtag {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+}

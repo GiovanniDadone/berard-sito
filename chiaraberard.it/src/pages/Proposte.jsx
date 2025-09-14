@@ -1,6 +1,5 @@
 import { Helmet } from "@vuer-ai/react-helmet-async";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { useSEO } from "../utils/seo";
 import "./Proposte.css";
 
 function useDragScroll() {
@@ -245,8 +244,8 @@ const Proposte = () => {
   const carouselData2 = [
     {
       id: 1,
-      staticMedia: "/gif/1-stopped.jpg",
-      animatedMedia: "/gif/1.mp4",
+      staticMedia: "/gif/3-stopped.jpg",
+      animatedMedia: "/gif/3.mp4",
       title: "Sociale",
       description:
         "Il diritto alla casa è una questione sociale cruciale anche ad Aosta. Da una ricerca di Regione Valle d’Aosta emerge che quasi il 27% dei genitori soli con figli vive in affitto, spesso con canoni che assorbono fino al 30% del reddito delle persone sole, mentre oltre un quarto delle famiglie ha difficoltà a sostenere le spese abitative. Questa fragilità colpisce in particolare le persone più giovani, i lavoratori precari e le famiglie straniere, che abitano mediamente in case più piccole e con peggiori condizioni abitative. A fronte di questi dati, serve un impegno concreto per rendere Aosta una città più giusta e inclusiva. Secondo i dati Openpolis, i comuni italiani spendono mediamente appena 1,28 euro pro capite per il diritto all’abitare, con forti disuguaglianze territoriali. Anche Aosta deve fare di più. La città deve adottare un Piano comunale per l’abitare, con il censimento e il recupero delle case sfitte, l’attivazione di un fondo per l’emergenza abitativa, accordi di canone concordato e progetti di housing sociale e co-housing. L’obiettivo è duplice: garantire alloggi dignitosi e accessibili a chi oggi è più in difficoltà, e ridare vita ai quartieri attraverso politiche abitative che siano anche occasioni di rigenerazione urbana e coesione sociale.",
@@ -255,14 +254,14 @@ const Proposte = () => {
       id: 2,
       staticMedia: "/gif/2-stopped.jpg",
       animatedMedia: "/gif/2.mp4",
-      title: "Cultura",
+      title: "Cambiamenti Climatici",
       description:
         "Ad Aosta quest’anno le temperature hanno superato i 40 gradi: un dato eccezionale che, con il cambiamento climatico, diventerà sempre più frequente. Per questo vorrei proporre un Piano comunale di adattamento urbano contro le isole di calore, che utilizzi le migliori pratiche internazionali. Le misure chiave riguardano la riforestazione urbana (piantumazioni mirate lungo viali e piazze, selezionando specie autoctone ad alta capacità di ombreggiamento e resistenza alla siccità), l’uso di tetti e pareti verdi negli edifici pubblici, l’introduzione di pavimentazioni riflettenti e permeabili per ridurre l’accumulo termico, e la creazione di corridoi blu-verdi che integrino verde urbano e gestione delle acque piovane. Questi interventi, già applicati in diverse città europee, permettono di abbassare le temperature fino a 2-3°C nelle aree urbane più dense, migliorando al tempo stesso la qualità dell’aria e la resilienza della città agli eventi estremi.",
     },
     {
       id: 3,
-      staticMedia: "/gif/3-stopped.jpg",
-      animatedMedia: "/gif/3.mp4",
+      staticMedia: "/gif/1-stopped.jpg",
+      animatedMedia: "/gif/1.mp4",
       title: "Accessibiltà",
       description:
         "Una città accessibile per tuttə, indipendentemente dalle proprie disabilità. Da persona con una malattia cronica, che a volte mi costringe a una mobilità ridotta, e attivista per la disabilità e le neurodivergenze faccio parecchio caso all'accessibilità cittadina. Mi occupo attivamente di questo tema dal 2022 dentro e fuori l’Università di Torino. Ci tengo che sia effettuata una mappatura di tutta la città, con un comitato di cittadinə interessatə al tema, e venga messo in atto il PEBA (Piano di Eliminazione delle Barriere architettoniche).",
@@ -271,7 +270,7 @@ const Proposte = () => {
       id: 4,
       staticMedia: "/gif/4-stopped.jpg",
       animatedMedia: "/gif/4.mp4",
-      title: "Proposta Gaza",
+      title: "Gemellaggio Gaza",
       description:
         "In un momento segnato da guerra, ingiustizia e costanti violazioni dei diritti umani, nonché del diritto internazionale, Aosta può e deve farsi portavoce di un messaggio di pace, cooperazione e diritti, costruendo un ponte tra comunità diverse ma unite dall’idea che nessuna distanza sia troppo grande quando a unirci è l’umanità. Per questo porterò in consiglio comunale una proposta di Gemellaggio tra Aosta e la Città di Gaza come segnale concreto di solidarietà e vicinanza al popolo palestinese, trasformando un atto simbolico in un impegno politico e umano di grande valore. Facciamo di questo gemellaggio un segno tangibile di speranza e responsabilità internazionale.",
     },
@@ -418,16 +417,6 @@ const Proposte = () => {
     );
   };
 
-  useSEO({
-    title:
-      "Chiara Berard - Candidata Valle d'Aosta Aperta | Elezioni Regionali 2025",
-    description:
-      "Sognare, lottare, restare. Chiara Berard candidata Valle d'Aosta Aperta per elezioni regionali 2025. Salario minimo, sanità pubblica, ambiente.",
-    canonical: "https://chiaraberard.it/",
-    ogImage: "https://chiaraberard.it/profile-image.png",
-    keywords:
-      "Chiara Berard, Valle d'Aosta, elezioni regionali, politica, salario minimo",
-  });
   return (
     <div className="proposte-container">
       <Helmet>

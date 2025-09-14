@@ -14,6 +14,22 @@
   align-items: center;
 }
 
+.stats-section h2 {
+  font-family: "Mattone", sans-serif;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  font-weight: 700;
+  color: var(--primary-red);
+  background-color: var(--primary-light);
+  border-radius: 24px;
+  padding: 6px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  line-height: 1.1;
+  width: 100%;
+  display: block;
+}
+
 .stats-title {
   font-family: "Mattone", sans-serif;
   font-size: clamp(2rem, 5vw, 2.5rem);
@@ -229,10 +245,10 @@
 
   .santino {
     margin-top: 5%;
-  width: 90%;
-  height: auto;
-  object-fit: contain;
-  display: block;
+    width: 90%;
+    height: auto;
+    object-fit: contain;
+    display: block;
   }
 }
 
@@ -247,12 +263,12 @@
     opacity: 0.75;
   }
 
-    .santino {
+  .santino {
     margin-top: 10%;
-  width: 90%;
-  height: auto;
-  object-fit: contain;
-  display: block;
+    width: 90%;
+    height: auto;
+    object-fit: contain;
+    display: block;
   }
 }
 

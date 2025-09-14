@@ -40,16 +40,20 @@ h1 {
   margin-bottom: 0.5rem;
 }
 
-h2 {
+.story-header-h2 {
   font-size: 1.8rem;
   margin-bottom: 3rem;
   color: var(--primary-red);
   background-color: var(--primary-light);
-  width: 45%;
+  width: auto;
   min-width: min-content;
+  max-width: min-content;
   border-radius: 12px;
-  padding-left: 4%;
+  padding-left: 2%; /* Ridotto da 4% */
+  padding-right: 2%; /* Nuovo per evitare il taglio */
   font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 h3 {
@@ -136,7 +140,6 @@ li {
   margin-top: 0.1rem;
 }
 
-
 /* Strong tags in battle items get teal color */
 li strong {
   color: var(--primary-teal);
@@ -152,34 +155,36 @@ li strong {
   .story-container {
     padding: 1rem;
   }
-  
+
   h1 {
     font-size: 3rem;
   }
-  
-  h2 {
-    font-size: 1.5rem;
+
+  .story-header-h2 {
+    font-size: 1.2rem;
+    width: auto;
+    max-width: min-content;
+    padding-left: 2%;
+    padding-right: 2%;
   }
-  
+
   h3 {
     font-size: 1.5rem;
   }
-  
+
   .story-main {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .story-column {
     padding: 1.5rem;
   }
-  
 
-  
   .story-text {
     font-size: 1rem;
   }
-  
+
   li {
     font-size: 1rem;
   }
@@ -189,10 +194,19 @@ li strong {
   h1 {
     font-size: 2.5rem;
   }
-  
+
+  .story-header-h2 {
+    font-size: 0.95rem;
+    max-width: min-content;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    text-align: center;
+    align-self: center;
+  }
+
   .story-column {
     padding: 1rem;
   }
-  
-
 }

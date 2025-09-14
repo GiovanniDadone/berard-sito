@@ -1,6 +1,5 @@
 import React from "react";
 import Marquee from "react-fast-marquee";
-import "@fontsource/press-start-2p";
 import "./Banner.css";
 
 const Banner = () => {

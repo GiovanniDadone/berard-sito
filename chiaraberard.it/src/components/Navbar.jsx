@@ -15,7 +15,7 @@ const Navbar = () => {
 
   // Funzione per aprire Gmail
   const handleEmailClick = () => {
-    window.open('https://mail.google.com/mail/?view=cm&fs=1&to=scrivimi@chiaraberard.it', '_blank');
+    window.open('https://actionnetwork.org/forms/scrivimi?source=direct_link&', '_blank');
   };
   
   return (

@@ -1,6 +1,7 @@
 // Contatti.jsx
 import { Helmet } from "@vuer-ai/react-helmet-async";
 import "./Contatti.css";
+import ComeAiutarmi from "../components/ComeAiutarmi";
 
 const Contatti = () => {
   // SEO per la pagina contatti
@@ -15,7 +16,7 @@ const Contatti = () => {
       contactPoint: [
         {
           "@type": "ContactPoint",
-          telephone: "+39-390-123-4567",
+          telephone: "+39-379-319-1577",
           contactType: "customer service",
           availableLanguage: ["Italian", "French"],
         },
@@ -28,7 +29,7 @@ const Contatti = () => {
       sameAs: [
         "https://instagram.com/adolescenzafumogeno",
         "https://facebook.com/profile.php?id=61569104398518",
-        "https://wa.me/393901234567",
+        "https://wa.me/393793191577",
       ],
     },
     about: {
@@ -119,8 +120,8 @@ const Contatti = () => {
             <p className="contact-text">
               Scrivimi per domande dirette e suggerimenti
             </p>
-            <a href="https://wa.me/393901234567" className="contact-link">
-              +39 390 123 4567
+            <a href="https://wa.me/393793191577" className="contact-link">
+              +39 379 319 1577
             </a>
           </div>
 
@@ -133,7 +134,7 @@ const Contatti = () => {
               Per collaborazioni e proposte ufficiali
             </p>
             <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=scrivimi@chiaraberard.it"
+              href="https://actionnetwork.org/forms/scrivimi?source=direct_link&"
               target="_blank"
               rel="noopener noreferrer"
               className="contact-link"
@@ -175,9 +176,7 @@ const Contatti = () => {
         </section>
 
         <section>
-          <div className="quote-box">
-            <p>Come Aiutarmi</p>
-          </div>
+          <ComeAiutarmi/>
         </section>
       </div>
     </div>

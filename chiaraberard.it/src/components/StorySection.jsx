@@ -7,7 +7,7 @@ const StorySection = () => {
       <div className="story-content">
         <section>
           <h1>CHIARA BERARD</h1>
-          <h2>VALLE D'AOSTA APERTA</h2>
+          <h2 className="story-header-h2">VALLE D'AOSTA APERTA</h2>{" "}
         </section>
 
         <section className="story-main">
