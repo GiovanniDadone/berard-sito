@@ -227,9 +227,9 @@ const Proposte = () => {
       id: 5,
       staticMedia: "/gif/10-stopped.jpg",
       animatedMedia: "/gif/10.mp4",
-      title: "Tornare", //WORK IN PROGRESS
+      title: "Restare e Tornare", //WORK IN PROGRESS
       description:
-        "Investimenti su rinnovabili ed efficienza energetica per ridurre costi e impatto ambientale. Comunità energetiche, solare sui tetti pubblici e sostegno alle famiglie per la transizione verde.",
+        "Penso che le proposte che porto e portiamo avanti come Valle D'Aosta Aperta possano rendere la nostra Regione un posto dove sognare di vivere e dove poter vedere il proprio futuro. La maggior parte dei giovani scappano e non hanno modo di tornare o se lo fanno è per brevi periodi, in momenti di passaggio delle loro vite. Questo porta le nostre valli a svuotarsi e rende anche più difficile la socialità tra persone della stessa generazione, perché c'è un vero e proprio svuotamento. Bisogna ripensare la proposta universitaria perché sia adatta alle necessità del territorio e soprattutto pensare ad aprire corsi magistrali, perché i soli corsi triennali costringono a svolgere le magistrali fuori Valle. Sono convinta che collegamenti migliori col fuori Valle, servizi per l'infanzia a costi ridotti e diversificazione dell'economia possano avere un ruolo chiave per vivere meglio il territorio.",
     },
     {
       id: 6,
